@@ -42,7 +42,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="pricing.html">
+							<a href="{{ route('parametrages.type_poulets')}}">
 								<i class="icon-file"></i>
 								<span class="menu-text">Type poulet</span>
 							</a>
