@@ -36,7 +36,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="documents.html">
+							<a href="{{ route('parametrages.batiments')}}">
 								<i class="icon-home"></i>
 								<span class="menu-text">Gestion batiments</span>
 							</a>

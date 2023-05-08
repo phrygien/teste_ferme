@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BatimentController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -26,4 +27,5 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
     Route::get('site', [SiteController::class, 'page'])->name('parametrages.site');
+    Route::get('batiment', [BatimentController::class, 'page'])->name('parametrages.batiments');
 });
