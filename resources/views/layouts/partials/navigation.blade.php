@@ -69,7 +69,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="appsDropdown">
                     <li>
-                        <a class="dropdown-item" href="chat.html">Chat App</a>
+                        <a class="dropdown-item" href="{{ route('parametrages.site') }}">Gestion site</a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="tasks.html">Tasks App</a>

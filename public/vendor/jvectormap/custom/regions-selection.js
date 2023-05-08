@@ -39,15 +39,15 @@ $(function(){
 				fill: '#ffffff'
 			},
 			selected: {
-				fill: '#ffbf05'
+				fill: '#ff8888'
 			}
 		},
 		regionStyle: {
 			initial: {
-				fill: '#1a8e5f'
+				fill: '#01902d'
 			},
 			selected: {
-				fill: '#118cf1'
+				fill: '#ff7777'
 			}
 		},
 		series: {

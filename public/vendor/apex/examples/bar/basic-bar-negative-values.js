@@ -4,7 +4,7 @@ var options = {
 		type: 'bar',
 		stacked: true
 	},
-	colors: ['#1a8e5f', '#262b31'],
+	colors: ['#01902d', '#666666'],
 	plotOptions: {
 		bar: {
 			horizontal: true,

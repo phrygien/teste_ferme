@@ -30,7 +30,7 @@ var options = {
 	xaxis: {
 		type: 'datetime'
 	},
-	colors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+	colors: ['#01902d', '#333333'],
 	yaxis: [{
 		title: {
 			text: 'Website Blog',

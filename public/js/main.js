@@ -1,35 +1,3 @@
-/*!
- * Bootstrap 4 multi dropdown navbar ( https://bootstrapthemes.co/demo/resource/bootstrap-4-multi-dropdown-navbar/ )
- * Copyright 2017.
- * Licensed under the GPL license
-*/
-
-$(document).ready(function(){
-	$('.dropdown-menu a.dropdown-toggle').on('click', function (e){
-		var $el = $(this);
-		var $parent = $(this).offsetParent(".dropdown-menu");
-		if (!$(this).next().hasClass('show')){
-			$(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-		}
-		var $subMenu = $(this).next(".dropdown-menu");
-		$subMenu.toggleClass('show');
-		
-		$(this).parent("li").toggleClass('show');
-
-		$(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e){
-			$('.dropdown-menu .show').removeClass("show");
-		});
-		
-		if (!$parent.parent().hasClass('navbar-nav')){
-			$el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
-		}
-		return false;
-	});
-});
-
-
-
-
 
 // Todays Date
 $(function() {
@@ -79,6 +47,7 @@ $(function() {
 });
 
 
+
 // Todo list
 $('.todo-body').on('click', 'li.todo-list', function() {
 	$(this).toggleClass('done');
@@ -100,54 +69,18 @@ $('.todo-body').on('click', 'li.todo-list', function() {
 })(jQuery);
 
 
+
 // Tasks Important Active
 $('.task-actions').on('click', '.important', function() {
 	$(this).toggleClass('active');
 });
 
 
+
 // Tasks Important Active
 $('.task-actions').on('click', '.star', function() {
 	$(this).toggleClass('active');
 });
-
-
-// Quick Links Sidebar
-(function($) {
-	// Collaboration Yammer Sidebar
-	$('.quick-links-btn').click(function(){
-		// Slide Box Toggle
-		$('.quick-links-box').toggleClass("quick-links-box-show");
-		$('.screen-overlay').toggleClass("show");
-		$('body').css('overflow', 'hidden');
-	});
-	$('.quick-links-box-close').click(function(){
-		// Slide Box Toggle
-		$('.quick-links-box').toggleClass("quick-links-box-show");
-		$('.screen-overlay').toggleClass("show");
-		$('body').css('overflow', 'auto');
-	});
-})(jQuery);
-
-
-// Quick Settings Sidebar
-(function($) {
-	// Collaboration Yammer Sidebar
-	$('.quick-settings-btn').click(function(){
-		// Slide Box Toggle
-		$('.quick-settings-box').toggleClass("quick-settings-box-show");
-		$('.screen-overlay').toggleClass("show");
-		$('body').css('overflow', 'hidden');
-	});
-	$('.quick-settings-box-close').click(function(){
-		// Slide Box Toggle
-		$('.quick-settings-box').toggleClass("quick-settings-box-show");
-		$('.screen-overlay').toggleClass("show");
-		$('body').css('overflow', 'auto');
-	});
-})(jQuery);
-
-
 
 
 
@@ -158,7 +91,7 @@ $(document).ready(function(){
   function countdown () {
   var now = moment(), // get the current moment
     // May 28, 2013 @ 12:00AM
-    then = moment([2020, 2, 7]),
+    then = moment([2020, 10, 7]),
     // get the difference from now to then in ms
     ms = then.diff(now, 'milliseconds', true);
     // If you need years, uncomment this line and make sure you add it to the concatonated phrase
@@ -214,3 +147,105 @@ $(function () {
 $(function () {
 	$('[data-toggle="popover"]').popover()
 })
+
+
+
+
+
+
+
+
+
+// Custom Sidebar JS
+jQuery(function ($) {
+
+	// Dropdown menu
+	$(".sidebar-dropdown > a").click(function () {
+		$(".sidebar-submenu").slideUp(200);
+		if ($(this).parent().hasClass("active")) {
+			$(".sidebar-dropdown").removeClass("active");
+			$(this).parent().removeClass("active");
+		} else {
+			$(".sidebar-dropdown").removeClass("active");
+			$(this).next(".sidebar-submenu").slideDown(200);
+			$(this).parent().addClass("active");
+		}
+	});
+
+
+
+	//toggle sidebar
+	$("#toggle-sidebar").click(function () {
+		$(".page-wrapper").toggleClass("toggled");
+	});
+
+
+
+	// Pin sidebar on click
+	$("#pin-sidebar").click(function () {
+		if ($(".page-wrapper").hasClass("pinned")) {
+			// unpin sidebar when hovered
+			$(".page-wrapper").removeClass("pinned");
+			$("#sidebar").unbind( "hover");
+		} else {
+			$(".page-wrapper").addClass("pinned");
+			$("#sidebar").hover(
+				function () {
+					console.log("mouseenter");
+					$(".page-wrapper").addClass("sidebar-hovered");
+				},
+				function () {
+					console.log("mouseout");
+					$(".page-wrapper").removeClass("sidebar-hovered");
+				}
+			)
+		}
+	});
+
+
+
+	// Pinned sidebar
+	$(function() {
+		$(".page-wrapper").hasClass("pinned");
+		$("#sidebar").hover(
+			function () {
+				console.log("mouseenter");
+				$(".page-wrapper").addClass("sidebar-hovered");
+			},
+			function () {
+				console.log("mouseout");
+				$(".page-wrapper").removeClass("sidebar-hovered");
+			}
+		)
+	});
+
+
+
+
+	// Toggle sidebar overlay
+	$("#overlay").click(function () {
+		$(".page-wrapper").toggleClass("toggled");
+	});
+
+
+
+	// Added by Srinu 
+	$(function(){
+		// When the window is resized, 
+		$(window).resize(function(){
+			// When the width and height meet your specific requirements or lower
+			if ($(window).width() <= 768){
+				$(".page-wrapper").removeClass("pinned");
+			}
+		});
+		// When the window is resized, 
+		$(window).resize(function(){
+			// When the width and height meet your specific requirements or lower
+			if ($(window).width() >= 768){
+				$(".page-wrapper").removeClass("toggled");
+			}
+		});
+	});
+
+
+});

@@ -17,7 +17,7 @@ var options = {
 			opacity: 1
 		},
 	},
-	colors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+	colors: ['#005f1d', '#007524', '#01902d', '#00bb3a', '#5bca7d'],
 	stroke: {
 		curve: 'smooth',
 		width: 3,

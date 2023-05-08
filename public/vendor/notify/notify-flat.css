@@ -8,16 +8,16 @@
   -ms-transition:all 0.5s ease-in-out;
 }
 .notify .note.note-success {
-  background-color: #27b963;
+  background-color: #00902d;
 }
 .notify .note.note-info {
-  background-color: #2091d9;
+  background-color: #064594;
 }
 .notify .note.note-warning {
-  background-color: #ffc107;
+  background-color: #e69f00;
 }
 .notify .note.note-danger {
-  background-color: #ec5052;
+  background-color: #e40000;
 }
 .notify .note .image,
 .notify .note .remove {

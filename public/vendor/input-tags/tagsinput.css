@@ -38,9 +38,10 @@
 .bootstrap-tagsinput .tag {
 	margin: 1px 2px 1px 0;
 	color: #ffffff;
-	background: #1a8e5f;
-	font-size: .8rem;
-	border-radius: 1px;
+	background: #01902d;
+	font-size: .7rem;
+	font-weight: 400;
+	border-radius: 30px;
 
 }
 .bootstrap-tagsinput .tag [data-role="remove"] {

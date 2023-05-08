@@ -1,6 +1,6 @@
 var options = {
 	chart: {
-		height: 300,
+		height: 360,
 		type: 'candlestick',
 		toolbar: {
 			show: false,
@@ -56,8 +56,8 @@ var options = {
 	plotOptions: {
 		candlestick: {
 			colors: {
-				upward: '#1a8e5f',
-				downward: '#cc2626'
+				upward: '#01902d',
+				downward: '#333333'
 			}
 		}
 	},

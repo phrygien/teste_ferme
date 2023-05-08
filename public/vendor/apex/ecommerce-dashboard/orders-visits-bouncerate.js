@@ -1,108 +1,61 @@
 var options = {
 	chart: {
-		height: 250,
-		type: 'line',
-		stacked: false,
+		height: 270,
+		type: 'bar',
 		toolbar: {
 			show: false,
+		},
+	},
+	plotOptions: {
+		bar: {
+			horizontal: false,
+			columnWidth: '50%',
 		},
 	},
 	dataLabels: {
 		enabled: false
 	},
-	series: [{
-		name: 'Orders',
-		type: 'column',
-		data: [40, 25, 29, 56, 62, 87, 85, 79, 49]
-	},{
-		name: 'Visits',
-		type: 'column',
-		data: [25, 35, 11, 47, 51, 94, 56, 87, 52]
-	},{
-		name: 'Revenue',
-		type: 'line',
-		data: [20, 10, 15, 36, 44, 45, 50, 58, 47]
-	}],
 	stroke: {
-		width: [0, 0, 3]
+		show: true,
+		width: 2,
+		colors: ['transparent']
 	},
-	colors: ['#1a8e5f', '#1d9f6c', '#262b31', '#63686f', '#868a90'],
+	series: [{
+		name: 'Visits',
+		data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+	}, {
+		name: 'Orders',
+		data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+	}, {
+		name: 'Revenue',
+		data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+	}],
 	xaxis: {
-		categories: ['Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+		categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
 	},
-	yaxis: [{
-		seriesName: 'Orders',
-		axisTicks: {
-			show: true,
-		},
-		axisBorder: {
-			show: true,
-			color: '#1a8e5f'
-		},
-		labels: {
-			style: {
-				color: '#1a8e5f',
-			}
-		},
+	yaxis: {
 		title: {
-			text: "Orders (in thousands)",
-			style: {
-				color: '#1a8e5f',
-			}
-		},
-		tooltip: {
-			enabled: true
+			text: '$(thousands)'
 		}
-	},{
-			seriesName: 'Visits',
-			opposite: true,
-			axisTicks: {
-				show: true,
-			},
-			axisBorder: {
-				show: true,
-				color: '#1d9f6c'
-			},
-			labels: {
-				style: {
-					color: '#1d9f6c',
-				}
-			},
-			title: {
-				text: "Visits (in thousand)",
-				style: {
-					color: '#1d9f6c',
-				}
-			},
-		},{
-			seriesName: 'Revenue',
-			opposite: true,
-			axisTicks: {
-				show: true,
-			},
-			axisBorder: {
-				show: true,
-				color: '#262b31'
-			},
-			labels: {
-				style: {
-					color: '#262b31',
-				},
-			},
-			title: {
-				text: "Revenue (in crores)",
-				style: {
-					color: '#262b31',
-				}
+	},
+	fill: {
+		opacity: 1
+	},
+	tooltip: {
+		y: {
+			formatter: function(val) {
+				return "$" + val + " thousands"
 			}
+		}
+	},
+	grid: {
+		row: {
+			colors: ['transparent'], // takes an array which will be repeated on columns
+			opacity: 0.5
 		},
-	],
-	legend: {
-		horizontalAlign: 'center',
-		offsetY: 10
-	}
+	},
+	colors: ['#01902d', '#666666', '#999999'],
 }
-
 var chart = new ApexCharts(
 	document.querySelector("#orders-visits"),
 	options

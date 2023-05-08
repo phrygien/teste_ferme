@@ -11,7 +11,7 @@ var options = {
 	theme: {
 		monochrome: {
 			enabled: true,
-			color: '#1a8e5f',
+			color: '#01902d',
 		}
 	},
 	title: {

@@ -1,14 +1,14 @@
 var options = {
   annotations: {
     points: [{
-      x: 'Bananas',
+      x: 'Burgers',
       seriesIndex: 0,
       label: {
-        borderColor: '#f38559',
+        borderColor: '#01902d',
         offsetY: 0,
         style: {
           color: '#ffffff',
-          background: '#f38559',
+          background: '#01902d',
           textSize: '10px',
         },
         text: 'Great Sales',
@@ -47,7 +47,7 @@ var options = {
     labels: {
       rotate: -45
     },
-    categories: ['Apples', 'Oranges', 'Strawberries', 'Pineapples', 'Mangoes', 'Bananas',
+    categories: ['Apples', 'Oranges', 'Strawberries', 'Pineapples', 'Mangoes', 'Burgers',
       'Blackberries', 'Pears', 'Watermelons', 'Cherries', 'Pomegranates', 'Tangerines', 'Papayas', 'Peaches'
     ],
   },
@@ -62,7 +62,7 @@ var options = {
   theme: {
     monochrome: {
       enabled: true,
-      color: '#1a8e5f',
+      color: '#01902d',
       shadeIntensity: 0.1
     },
   },
@@ -71,7 +71,7 @@ var options = {
     gradient: {
       shade: 'light',
       type: "horizontal",
-      gradientToColors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+      colors: ['#01902d', '#00bb3a', '#5bca7d'],
       shadeIntensity: 0.25,
       inverseColors: true,
       opacityFrom: 0.75,

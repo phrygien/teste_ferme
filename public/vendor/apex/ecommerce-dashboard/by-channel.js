@@ -1,6 +1,6 @@
 var options = {
 	chart: {
-		height: 190,
+		height: 240,
 		type: 'bar',
 		toolbar: {
 			show: false,
@@ -17,6 +17,7 @@ var options = {
 	series: [{
 		data: [2000, 3000, 4000, 5000, 6000]
 	}],
+	colors: ['#01902d', '#999999'],
 	xaxis: {
 		categories: ["Organic", "Search", "TV Ads", "Social", "Video"],
 	},

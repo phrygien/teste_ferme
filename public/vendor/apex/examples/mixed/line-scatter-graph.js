@@ -99,7 +99,7 @@ var options = {
 	legend: {
 		show: false
 	},
-	colors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+	colors: ['#005f1d', '#007524', '#01902d', '#00bb3a', '#5bca7d'],
 	xaxis: {
 		type: 'numeric',
 		min: 0,

@@ -52,7 +52,7 @@ var options = {
 			}
 		}
 	},
-	colors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+	colors: ['#005f1d', '#444444'],
 }
 var chart = new ApexCharts(
 	document.querySelector("#line-area-graph"),

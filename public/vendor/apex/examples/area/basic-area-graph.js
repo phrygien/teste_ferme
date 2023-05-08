@@ -51,7 +51,7 @@ var options = {
 		width: 3,
 	},
 	series: [{
-		name: "Wafi Admin",
+		name: "Le Rouge Admin",
 		data: series.monthDataSeries1.prices
 	}],
 	title: {
@@ -77,14 +77,14 @@ var options = {
 	theme: {
 		monochrome: {
 			enabled: true,
-			color: '#1a8e5f',
+			color: '#01902d',
 			shadeIntensity: 0.1
 		},
 	},
 	markers: {
 		size: 0,
 		opacity: 0.2,
-		colors: ["#1a8e5f"],
+		colors: ["#01902d"],
 		strokeColor: "#fff",
 		strokeWidth: 2,
 		hover: {

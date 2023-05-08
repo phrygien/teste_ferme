@@ -8,7 +8,7 @@ $(function(){
 		zoomOnScroll: false,
 		markerStyle: {
 			initial: {
-				fill: '#cc2626',
+				fill: '#01902d',
 				stroke: '#FFFFFF',
 				r: 6
 			}
@@ -18,7 +18,7 @@ $(function(){
 		series: {
 			regions: [{
 				values: gdpData,
-				scale: ['#1a8e5f'],
+				scale: ['#01902d', '#1146bf', '#dcf7e4'],
 				normalizeFunction: 'polynomial'
 			}]
 		},

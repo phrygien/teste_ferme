@@ -51,19 +51,29 @@
 
 .fc-ltr .fc-dayGrid-view .fc-day-top .fc-week-number {
 	float: left;
-	border-radius: 0 0 3px 0;
+	margin: 3px;
+	border-radius: 30px;
 }
 
 .fc-rtl .fc-dayGrid-view .fc-day-top .fc-week-number {
 	float: right;
-	border-radius: 0 0 0 3px;
+	margin: 3px;
+	border-radius: 30px;
 }
 
 .fc-dayGrid-view .fc-day-top .fc-week-number {
-	min-width: 1.5em;
+	min-width: 24px;
+	height: 24px;
+	line-height: 24px;
 	text-align: center;
-	background-color: #cc2627;
-	color: #FFFFFF;
+	background-color: #01902d;
+	color: #ffffff;
+	border-radius: 30px;
+	font-size: 11px;
+	font-weight: 600;
+}
+.fc-dayGrid-view .fc-day-top .fc-week-number:hover {
+	color: #1b1a1a;
 }
 
 /* when week/day number have own column */

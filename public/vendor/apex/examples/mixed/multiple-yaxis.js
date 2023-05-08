@@ -30,7 +30,7 @@ var options = {
 		text: 'Overall income in millon dollors form online and offline sales from 2010 to 2018.',
 		align: 'center',
 	},
-	colors: ['#1a8e5f', '#262b31', '#cc2626', '#63686f', '#868a90'],
+	colors: ['#01902d', '#00bb3a', '#333333'],
 	xaxis: {
 		categories: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
 	},
@@ -40,17 +40,17 @@ var options = {
 		},
 		axisBorder: {
 			show: true,
-			color: '#1a8e5f'
+			color: '#01902d'
 		},
 		labels: {
 			style: {
-				color: '#1a8e5f',
+				color: '#01902d',
 			}
 		},
 		title: {
 			text: "Orders (in thousands)",
 			style: {
-				color: '#1a8e5f',
+				color: '#01902d',
 			}
 		},
 		tooltip: {
@@ -64,17 +64,17 @@ var options = {
 			},
 			axisBorder: {
 				show: true,
-				color: '#262b31'
+				color: '#00bb3a'
 			},
 			labels: {
 				style: {
-					color: '#262b31',
+					color: '#00bb3a',
 				}
 			},
 			title: {
 				text: "Sales (in thousand)",
 				style: {
-					color: '#262b31',
+					color: '#00bb3a',
 				}
 			},
 		},{
@@ -85,24 +85,24 @@ var options = {
 			},
 			axisBorder: {
 				show: true,
-				color: '#cc2626'
+				color: '#333333'
 			},
 			labels: {
 				style: {
-					color: '#cc2626',
+					color: '#333333',
 				},
 			},
 			title: {
 				text: "Revenue (in crores)",
 				style: {
-					color: '#cc2626',
+					color: '#333333',
 				}
 			}
 		},
 	],
 	legend: {
 		horizontalAlign: 'center',
-		offsetY: 10
+		offsetY: -5
 	}
 }
 

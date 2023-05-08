@@ -33,7 +33,7 @@ var options = {
 	theme: {
 		monochrome: {
 			enabled: true,
-			color: '#2e323c',
+			color: '#01902d',
 			shadeIntensity: 0.1
 		},
 	},
@@ -41,7 +41,7 @@ var options = {
 		type: 'gradient',
 		gradient: {
 			shade: 'light',
-			gradientToColors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+			colors: ['#005f1d', '#007524', '#01902d', '#00bb3a', '#5bca7d'],
 			shadeIntensity: 1,
 			type: 'horizontal',
 			opacityFrom: 1,
@@ -52,7 +52,7 @@ var options = {
 	markers: {
 		size: 0,
 		opacity: 0.2,
-		colors: ["#1a8e5f"],
+		colors: ['#01902d'],
 		strokeColor: "#fff",
 		strokeWidth: 2,
 		hover: {

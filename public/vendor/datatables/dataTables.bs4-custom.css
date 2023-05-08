@@ -8,7 +8,7 @@ table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.
 	border-top: 1px solid #ddd;
 }
 td.highlight {
-	background-color: #dee5f1 !important;
+	background-color: #fff2d2 !important;
 }
 
 /* Fixed Header */

@@ -13,5 +13,5 @@ Morris.Bar({
 	resize: true,
 	hideHover: "auto",
 	gridLineColor: "#e1e5f1",
-	barColors:['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+	barColors:['#01902d', '#007524', '#005f1d'],
 });

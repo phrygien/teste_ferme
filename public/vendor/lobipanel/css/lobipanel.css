@@ -13,10 +13,6 @@ body.lobipanel-minimized {
 	border: 0;
 }
 
-.lobipanel > .card-header > .card-title {
-	float: left;
-}
-
 .lobipanel > .card-header > .card-title input {
 	height: 24px;
 	padding: .375rem .75rem;
@@ -37,7 +33,6 @@ body.lobipanel-minimized {
 
 .lobipanel > .card-header .dropdown {
 	display: inline-block;
-	float: right;
 	position: absolute;
 	right: 8px;
 	top: 8px;
@@ -109,11 +104,13 @@ body.lobipanel-minimized {
     align-items: center;
     justify-content: center;
 		cursor: pointer;
-		width: 30px;
-		height: 30px;
+		width: 36px;
+		height: 36px;
+		padding: 0;
 		font-size: 14px;
 		transition: all 0.2s;
 		color: #2d333c;
+		border-radius: 30px;
 	}
 
 	.lobipanel .card-header .dropdown .dropdown-menu .dropdown-item .panel-control-icon {
@@ -126,7 +123,7 @@ body.lobipanel-minimized {
 
 	.lobipanel .card-header .dropdown .dropdown-menu .dropdown-item:hover,
 	.lobipanel .card-header .dropdown .dropdown-menu .dropdown-item:focus:hover {
-		background-color: #e5fdf3;
+		background-color: #fff2d2;
 	}
 
 	.lobipanel .card-header .dropdown .dropdown-menu .dropdown-item:focus {
@@ -169,13 +166,15 @@ body.lobipanel-minimized {
 .lobipanel.panel-minimized.panel-unpin {
 	margin-bottom: 0;
 }
-
+.lobipanel.panel-expanded {
+	border-radius: 0;
+}
 .lobipanel.panel-unpin {
 	overflow: hidden;
 	position: absolute;
 	z-index: 10000;
-	border: 1px dashed #1a8e5f;
-	box-shadow: 0 0 100px #b3c4da;
+	border: 1px dashed #ecb66c;
+	box-shadow: 0 0 100px #cfd7da;
 }
 
 .lobipanel.panel-unpin > .card-header {
@@ -308,11 +307,11 @@ body.lobipanel-minimized {
 	position: absolute;
 	right: 15px;
 	top: 15px;
-	color: #1a8e5f;
+	color: #01902d;
 	content: "\ea5e";
 	font-family: 'icomoon';
 }
 .lobipanel-sortable:hover {
-	background: #e5fdf3;
-	box-shadow: inset 0 0 1px #1a8e5f;
+	background: #dcf7e4;
+	box-shadow: inset 0 0 1px #01902d;
 }

@@ -5,13 +5,13 @@ $(function(){
 		zoomOnScroll: false,
 		regionStyle:{
 			initial: {
-				fill: '#1a8e5f',
+				fill: '#01902d',
 			},
 			hover: {
 				"fill-opacity": 0.8
 			},
 			selected: {
-				fill: '#03a082'
+				fill: '#1146bf'
 			},
 		},
 		backgroundColor: 'transparent',

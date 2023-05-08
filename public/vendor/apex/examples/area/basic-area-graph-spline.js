@@ -11,10 +11,10 @@ var options = {
 		width: 3
 	},
 	series: [{
-		name: 'Wafi Admin',
+		name: 'Le Rouge Admin',
 		data: [3100, 4000, 2800, 5100, 4200, 1090, 1000]
 	}, {
-		name: 'Wafi Dashboard',
+		name: 'Le Rouge Dashboard',
 		data: [1100, 3200, 4500, 3200, 3400, 5200, 4100]
 	}],
 	grid: {
@@ -30,14 +30,14 @@ var options = {
 	theme: {
 		monochrome: {
 			enabled: true,
-			color: '#1a8e5f',
+			color: '#01902d',
 			shadeIntensity: 0.1
 		},
 	},
 	markers: {
 		size: 0,
 		opacity: 0.2,
-		colors: ["#1a8e5f"],
+		colors: ["#01902d"],
 		strokeColor: "#fff",
 		strokeWidth: 2,
 		hover: {

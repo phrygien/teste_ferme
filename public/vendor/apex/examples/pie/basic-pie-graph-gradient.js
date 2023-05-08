@@ -22,7 +22,7 @@ var options = {
 	fill: {
 		type: 'gradient',
 	},
-	colors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+	colors: ['#005f1d', '#007524', '#01902d', '#00bb3a', '#5bca7d'],
 }
 var chart = new ApexCharts(
 	document.querySelector("#basic-pie-graph-gradient"),

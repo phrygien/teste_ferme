@@ -12,7 +12,7 @@
 .note-btn-group .btn {
 	font-size: .75rem;
 	background-color: #fff;
-    border-color: #ccdae2;
+    border-color: #e7eaef;
 }
 .note-btn-group .btn i {
 	vertical-align: initial;
@@ -69,13 +69,13 @@
 .note-popover .popover-content, .card-header.note-toolbar {
 	padding: 0 0 5px 5px;
 	margin: 0;
-	background: #f9fdff;
+	background: #f6f8fa;
 }
 .note-editor.note-frame {
 	border: 1px solid #e2ecf2;
 }
 .note-editor.note-frame .note-statusbar {
-	background-color: #f9fdff;
+	background-color: #f6f8fa;
 	border-top: 1px solid #e2ecf2;
 }
 .editor-container {

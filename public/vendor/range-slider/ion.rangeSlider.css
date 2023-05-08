@@ -242,7 +242,7 @@
 	font-weight: 600;
 	top: 0;
 	padding: 1px 10px;
-	background: #e6ecf3;
+	background: #e7eaef;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
 }
@@ -341,27 +341,27 @@
 }
 .irs-bar {
 	background-image: none;
-	background-color: #1a8e5f;
+	background-color: #01902d;
 }
 .irs-bar-edge {
 	background-image: none;
-	background-color: #1a8e5f;
+	background-color: #01902d;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 .irs-line-left {
 	background-image: none;
-	background-color: #e6ecf3;
+	background-color: #e7eaef;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 .irs-line-mid {
 	background-image: none;
-	background-color: #e6ecf3;
+	background-color: #e7eaef;
 }
 .irs-line-right {
 	background-image: none;
-	background-color: #e6ecf3;
+	background-color: #e7eaef;
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
@@ -377,7 +377,7 @@
 	width: 2px;
 	height: 18px;
 	position: absolute;
-	background-color: #1a8e5f;
+	background-color: #01902d;
 	left: 50%;
 	margin-left: -1px;
 }

@@ -38,13 +38,7 @@ var options = {
 			max: 15
 		})
 	}],
-	theme: {
-		monochrome: {
-			enabled: true,
-			color: '#1a8e5f',
-			shadeIntensity: 0.1
-		},
-	},
+	colors: ['#01902d', '#007524', '#005f1d'],
 	grid: {
 		row: {
 			colors: ['#ffffff'], // takes an array which will be repeated on columns

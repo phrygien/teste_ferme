@@ -2,9 +2,9 @@ function generateData(baseval, count, yrange) {
 	var i = 0;
 	var series = [];
 	while (i < count) {
-		var x = Math.floor(Math.random() * (750 - 1 + 1)) + 1;;
+		var x = Math.floor(Math.random() * (20 - 1 + 1)) + 1;;
 		var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-		var z = Math.floor(Math.random() * (75 - 5 + 1)) + 5;
+		var z = Math.floor(Math.random() * (70 - 5 + 1)) + 5;
 		series.push([x, y, z]);
 		baseval += 86400000;
 		i ++;
@@ -14,7 +14,7 @@ function generateData(baseval, count, yrange) {
 
 var options = {
 	chart: {
-		height: 300,
+		height: 380,
 		type: 'bubble',
 		toolbar: {
 			show: false,
@@ -25,7 +25,7 @@ var options = {
 	},
 	series: [{
 		name: 'ETH',
-		data: generateData(new Date('25 May 2019 GMT').getTime(), 20, {
+		data: generateData(new Date('25 Jan 2020 GMT').getTime(), 20, {
 			min: 10,
 			max: 60
 		})
@@ -46,7 +46,7 @@ var options = {
 	yaxis: {
 		max: 70
 	},
-	colors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
+	colors: ['#01902d', '#005f1d'],
 }
 
 var chart = new ApexCharts(

@@ -1,13 +1,28 @@
+// Custom Scroll for Sidebar
+$(function() {
+	$('.sidebar-content').slimScroll({
+		color: '#eff1f5',
+		alwaysVisible: false,
+		size: "5px",
+		height: "100%",
+		distance: '1px',
+		railVisible: false,
+		railColor: "#eff1f5",
+		position: 'left',
+	});
+});
+
+
 // Custom Scroll
 $(function() {
 	$('.customScroll').slimScroll({
 		height: "180px",
 		color: '#e5e8f2',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#0066bf",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -15,12 +30,12 @@ $(function() {
 $(function() {
 	$('.customScroll2').slimScroll({
 		height: "227px",
-		color: '#ffffff',
+		color: '#eff1f5',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#ffffff",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -28,12 +43,12 @@ $(function() {
 $(function() {
 	$('.customScroll3').slimScroll({
 		height: "218px",
-		color: '#ffffff',
+		color: '#eff1f5',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#ffffff",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -41,12 +56,12 @@ $(function() {
 $(function() {
 	$('.customScroll4').slimScroll({
 		height: "310px",
-		color: '#ffffff',
+		color: '#eff1f5',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#ffffff",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -54,12 +69,12 @@ $(function() {
 $(function() {
 	$('.customScroll5').slimScroll({
 		height: "250px",
-		color: '#ffffff',
+		color: '#eff1f5',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#ffffff",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -72,10 +87,10 @@ $(function() {
 		height: "calc(100vh - 250px)",
 		color: '#17202b',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#0066bf",
+		railColor: "#eff1f5",
 		position: 'left',
 	});
 });
@@ -89,10 +104,10 @@ $(function() {
 		height: "100%",
 		color: '#e6ecf3',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e6ecf3",
+		railColor: "#eff1f5",
 	});
 });
 // Chat Users Container Scroll
@@ -101,10 +116,10 @@ $(function() {
 		height: "100%",
 		color: '#e6ecf3',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e6ecf3",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -117,10 +132,10 @@ $(function() {
 		height: "100%",
 		color: '#e6ecf3',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e6ecf3",
+		railColor: "#eff1f5",
 		position: 'left',
 	});
 });
@@ -130,10 +145,10 @@ $(function() {
 		height: "100%",
 		color: '#e6ecf3',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e6ecf3",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -147,10 +162,10 @@ $(function() {
 		height: "100%",
 		color: '#e6ecf3',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e6ecf3",
+		railColor: "#eff1f5",
 		position: 'left',
 	});
 });
@@ -160,10 +175,10 @@ $(function() {
 		height: "100%",
 		color: '#e6ecf3',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e6ecf3",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -173,10 +188,10 @@ $(function() {
 		height: "350px",
 		color: '#e5e8f2',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e5e8f2",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -187,10 +202,10 @@ $(function() {
 		height: "170px",
 		color: '#e5e8f2',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e5e8f2",
+		railColor: "#eff1f5",
 	});
 });
 
@@ -201,10 +216,10 @@ $(function() {
 		height: "100%",
 		color: '#e5e8f2',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '1px',
 		railVisible: false,
-		railColor: "#e5e8f2",
+		railColor: "#eff1f5",
 		position: 'left',
 	});
 });
@@ -217,9 +232,9 @@ $(function() {
 		height: "100%",
 		color: '#c7cdd4',
 		alwaysVisible: false,
-		size: "4px",
+		size: "5px",
 		distance: '3px',
 		railVisible: false,
-		railColor: "#c7cdd4",
+		railColor: "#eff1f5",
 	});
 });

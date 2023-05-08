@@ -32,7 +32,7 @@ var options = {
 	xaxis: {
 		categories: [2010, 2012, 2014, 2016, 2018],
 	},
-	colors: ['#1a8e5f', '#262b31'],
+	colors: ['#01902d', '#007524', '#005f1d'],
 }
 var chart = new ApexCharts(
 	document.querySelector("#basic-bar-graph-grouped"),

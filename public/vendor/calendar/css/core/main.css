@@ -124,7 +124,7 @@ hr.fc-divider {
 	vertical-align: top;
 }
 .fc td.fc-day:hover {
-	background: #f2f7fd;
+	background: #dcf7e4;
 }
 
 .fc td.fc-today {
@@ -264,12 +264,12 @@ temporary rendered events).
 	font-size: .7rem;
 	line-height: 1.6;
 	border-radius: 0;
-	border: 1px solid #1a8e5f;
+	border: 1px solid #01902d;
 }
 
 .fc-event,
 .fc-event-dot {
-	background-color: #1a8e5f;
+	background-color: #01902d;
 	/* default BACKGROUND color */
 }
 
@@ -577,11 +577,11 @@ TODO: more distinction between this file and common.css
 .fc-unthemed .fc-divider,
 .fc-unthemed .fc-popover .fc-header,
 .fc-unthemed .fc-list-heading td {
-	background: #f5f9fe;
+	background: #dcf7e4;
 }
 
 .fc-unthemed td.fc-today {
-	background: #fcf8e3;
+	background: #dcf7e4;
 }
 
 .fc-unthemed .fc-disabled-day {
@@ -694,10 +694,10 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 	user-select: none;
 	background-color: transparent;
 	border: 1px solid transparent;
-	padding: 0.4em 0.65em;
+	padding: 0.4em 0.75em;
 	font-size: 1em;
 	line-height: 1.5;
-	border-radius: 2px;
+	border-radius: 30px;
 }
 
 .fc-button:hover {
@@ -718,14 +718,14 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 /* "primary" coloring */
 .fc-button-primary {
 	color: #fff;
-	background-color: #1a8e5e;
-	border-color: #1a8e5e;
+	background-color: #01902d;
+	border-color: #01902d;
 }
 
 .fc-button-primary:hover {
 	color: #fff;
-	background-color: #1e2b37;
-	border-color: #1a252f;
+	background-color: #007d27;
+	border-color: #007d27;
 }
 
 .fc-button-primary:focus {
@@ -735,15 +735,15 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 
 .fc-button-primary:disabled {
 	color: #fff;
-	background-color: #2C3E50;
-	border-color: #2C3E50;
+	background-color: #484848;
+	border-color: #484848;
 }
 
 .fc-button-primary:not(:disabled):active,
 .fc-button-primary:not(:disabled).fc-button-active {
 	color: #fff;
-	background-color: #262b32;
-	border-color: #262b32;
+	background-color: #484848;
+	border-color: #484848;
 }
 
 .fc-button-primary:not(:disabled):active:focus,
@@ -808,7 +808,7 @@ Lots taken from Flatly (MIT): https://bootswatch.com/4/flatly/bootstrap.css
 /* List View
 --------------------------------------------------------------------------------------------------*/
 .fc-unthemed .fc-list-item:hover td {
-	background-color: #e9eff7;
+	background-color: #eff1f5;
 }
 
 /* Toolbar

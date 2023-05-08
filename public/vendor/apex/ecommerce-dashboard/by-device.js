@@ -1,25 +1,31 @@
-// By Device
 var options = {
 	chart: {
-		width: '100%',
-		height: 185,
+		height: 230,
 		type: 'donut',
 	},
-	series: [2000, 3000, 5000],
-	labels: ["Tablet", "Mobile", "Desktop"],
-	stroke: {
-		width: 0,
+	labels: ['Desktop', 'Tablet', 'Mobile'],
+	series: [60000, 45000, 15000],
+	legend: {
+		position: 'bottom',
 	},
-	// colors: ['#1a8e5f', '#262b31', '#434950', '#63686f', '#868a90'],
-	theme: {
-		monochrome: {
-			enabled: true,
-			color: '#1a8e5f',
+	dataLabels: {
+		enabled: false
+	},
+	stroke: {
+		width: 10,
+		colors: ['#eceff3'],
+	},
+	colors: ['#01902d', '#999999', '#CCCCCC'],
+	tooltip: {
+		y: {
+			formatter: function(val) {
+				return  "$" + val
+			}
 		}
 	},
 }
 var chart = new ApexCharts(
-	document.querySelector("#by-device"),
+	document.querySelector("#budget"),
 	options
 );
 chart.render();
