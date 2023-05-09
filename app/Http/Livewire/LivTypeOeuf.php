@@ -21,7 +21,7 @@ class LivTypeOeuf extends Component
 
     public function render()
     {
-        $types = TypeOeuf::paginate(5);
+        $types = TypeOeuf::paginate(7);
         return view('livewire.liv-type-oeuf', [
             'types' => $types
         ]);
@@ -87,6 +87,7 @@ class LivTypeOeuf extends Component
         $this->editType = true;
         $this->createType = false;
         $this->btnCreate = false;
+        $this->afficherListe = false;
         $this->isLoading = false;
     }
 
@@ -130,6 +131,7 @@ class LivTypeOeuf extends Component
             $this->resetValidation();
             $this->confirmUpdate = false;
             $this->btnCreate = true;
+            $this->afficherListe = true;
 
             $this->isLoading = false;
         }catch(\Exception $e){
