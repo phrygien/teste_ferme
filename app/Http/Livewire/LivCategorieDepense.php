@@ -22,7 +22,7 @@ class LivCategorieDepense extends Component
 
     public function render()
     {
-        $types = CategorieDepense::paginate(8);
+        $types = CategorieDepense::paginate(5);
         return view('livewire.liv-categorie-depense', [
             'types' => $types
         ]);
@@ -93,6 +93,7 @@ class LivCategorieDepense extends Component
         $this->createType = false;
         $this->btnCreate = false;
         $this->isLoading = false;
+        $this->afficherListe = false;
     }
 
     public function confirmerUpdate()
@@ -112,7 +113,7 @@ class LivCategorieDepense extends Component
 
         try{
 
-            $typeCharge = TypeCharge::findOrFail($this->type_id);
+            $typeCharge = CategorieDepense::findOrFail($this->type_id);
             $typeCharge->update([
                 'categorie' => $this->categorie,
                 'commentaire' => $this->commentaire,
@@ -121,11 +122,14 @@ class LivCategorieDepense extends Component
 
             $this->editType = false;
             $this->notification = true;
+            session()->flash('message', 'Modification bien enregistrée!');
             $this->resetInput();
             $this->resetValidation();
             $this->confirmUpdate = false;
             $this->btnCreate = true;
             $this->isLoading = false;
+            $this->afficherListe = true;
+
         }catch(\Exception $e){
 
         }
@@ -151,13 +155,13 @@ class LivCategorieDepense extends Component
         $this->resetInput();
         $this->resetValidation();
         $this->btnCreate = true;
-
+        $this->afficherListe = true;
         $this->isLoading = false;
     }
 
     public function confirmerDelete($id)
     {
-        $this->recordToDelete = TypeCharge::findOrFail($id);
+        $this->recordToDelete = CategorieDepense::findOrFail($id);
     }
 
     public function cancelDelete()
@@ -170,6 +174,7 @@ class LivCategorieDepense extends Component
         $this->recordToDelete->delete();
         $this->recordToDelete = null;
         $this->notification = true;
+        session()->flash('message', 'Suppression catégorie avec succée!');
     }
 
     public function removeNotification()
