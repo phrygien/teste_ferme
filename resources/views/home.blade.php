@@ -31,22 +31,22 @@
         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="info-stats4">
                 <div class="info-icon">
-                    <i class="icon-eye1"></i>
+                    <i class="icon-globe"></i>
                 </div>
                 <div class="sale-num">
-                    <h3>9500</h3>
-                    <p>Visitors</p>
+                    <h3>19</h3>
+                    <p>Sites</p>
                 </div>
             </div>
         </div>
         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="info-stats4">
                 <div class="info-icon">
-                    <i class="icon-shopping-cart1"></i>
+                    <i class="icon-home"></i>
                 </div>
                 <div class="sale-num">
-                    <h3>2500</h3>
-                    <p>Orders</p>
+                    <h3>25</h3>
+                    <p>Betiments</p>
                 </div>
             </div>
         </div>
@@ -56,8 +56,8 @@
                     <i class="icon-shopping-bag1"></i>
                 </div>
                 <div class="sale-num">
-                    <h3>7500</h3>
-                    <p>Sales</p>
+                    <h3>7</h3>
+                    <p>Cycle</p>
                 </div>
             </div>
         </div>
@@ -72,9 +72,59 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Depense</div>
+                </div>
+                <div class="card-body">
+
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Row end -->
 
+    <!-- Row start -->
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Exemple 2</div>
+                </div>
+                <div class="card-body pt-0">
+                    <div id="visitors"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+    
+    <!-- Row starts -->
+    <div class="row gutters">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Le titre du dashboard ici</div>
+                </div>
+                <div class="card-body">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Le titre du dashboard ici</div>
+                </div>
+                <div class="card-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row ends -->
 
 </div>
 <!-- Main container end -->

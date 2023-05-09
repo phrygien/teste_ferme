@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BatimentController;
+use App\Http\Controllers\CategoriedepenseController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -32,4 +33,5 @@ Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
     Route::get('batiment', [BatimentController::class, 'page'])->name('parametrages.batiments');
     Route::get('type_poulet', [TypepouletController::class, 'page'])->name('parametrages.type_poulets');
     Route::get('type_oeuf', [TypeoeufController::class, 'page'])->name('parametrages.type_oeufs');
+    Route::get('categorie_depense', [CategoriedepenseController::class, 'page'])->name('parametrages.categorie_depenses');
 });
