@@ -16,10 +16,10 @@
 				</a>
 				<div class="triangle"></div>
 			</li>
-			<li class="nav-item" data-item="uikits">
+			<li class="nav-item" data-item="gentree">
 				<a class="nav-item-hold" href="#">
-					<i class="nav-icon i-Computer-Secure"></i>
-					<span class="nav-text">Plateforme</span>
+					<i class="nav-icon i-Cash-register-2"></i>
+					<span class="nav-text">G.Entrée</span>
 				</a>
 				<div class="triangle"></div>
 			</li>
@@ -263,7 +263,7 @@
 			</li>
 		</ul>
 		{{-- Fin sous menu parametrages --}}
-		<ul class="childNav" data-parent="uikits">
+		<ul class="childNav" data-parent="gentree">
 			<li class="nav-item">
 				<a href="#">
 					<i class="nav-icon i-Bell1"></i>
@@ -274,6 +274,12 @@
 				<a href="alerts.html">
 					<i class="nav-icon i-File-Copy"></i>
 					<span class="item-name">{{ __('Constat oeuf')}}</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="alerts.html">
+					<i class="nav-icon i-File-Copy"></i>
+					<span class="item-name">{{ __('Constat poulet')}}</span>
 				</a>
 			</li>
 			{{-- <li class="nav-item dropdown-sidemenu">
