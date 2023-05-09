@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\Site\SiteController;
+use App\Http\Controllers\TypeoeufController;
 use App\Http\Controllers\TypepouletController;
 
 Route::get('/', function () {
@@ -30,4 +31,5 @@ Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
     Route::get('site', [SiteController::class, 'page'])->name('parametrages.site');
     Route::get('batiment', [BatimentController::class, 'page'])->name('parametrages.batiments');
     Route::get('type_poulet', [TypepouletController::class, 'page'])->name('parametrages.type_poulets');
+    Route::get('type_oeuf', [TypeoeufController::class, 'page'])->name('parametrages.type_oeufs');
 });
