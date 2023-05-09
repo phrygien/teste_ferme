@@ -9,13 +9,6 @@
 				</a>
 				<div class="triangle"></div>
 			</li>
-			<li class="nav-item" data-item="uikits">
-				<a class="nav-item-hold" href="#">
-					<i class="nav-icon i-Computer-Secure"></i>
-					<span class="nav-text">Plateforme</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
 			<li class="nav-item" data-item="extrakits">
 				<a class="nav-item-hold" href="#">
 					<i class="nav-icon i-Gears"></i>
@@ -23,61 +16,24 @@
 				</a>
 				<div class="triangle"></div>
 			</li>
-			<li class="nav-item" data-item="apps">
+			<li class="nav-item" data-item="uikits">
 				<a class="nav-item-hold" href="#">
 					<i class="nav-icon i-Computer-Secure"></i>
-					<span class="nav-text">Apps</span>
+					<span class="nav-text">Plateforme</span>
 				</a>
 				<div class="triangle"></div>
 			</li>
 
-			<li class="nav-item" data-item="widgets">
-				<a class="nav-item-hold" href="#">
-					<i class="nav-icon i-Computer-Secure"></i>
-					<span class="nav-text">Widgets</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
-
-			<li class="nav-item " data-item="charts">
-				<a class="nav-item-hold" href="#">
-					<i class="nav-icon i-File-Clipboard-File--Text"></i>
-					<span class="nav-text">Charts</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
-
-
-			<li class="nav-item" data-item="forms">
-				<a class="nav-item-hold" href="#">
-					<i class="nav-icon i-File-Clipboard-File--Text"></i>
-					<span class="nav-text">Forms</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
-			<li class="nav-item">
-				<a class="nav-item-hold" href="datatables.html">
-					<i class="nav-icon i-File-Horizontal-Text"></i>
-					<span class="nav-text">Datatables</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
 			<li class="nav-item" data-item="sessions">
 				<a class="nav-item-hold" href="#">
 					<i class="nav-icon i-Administrator"></i>
-					<span class="nav-text">Sessions</span>
+					<span class="nav-text">{{ __('Accée et securité')}}</span>
 				</a>
 				<div class="triangle"></div>
 			</li>
-			<li class="nav-item active" data-item="others">
-				<a class="nav-item-hold" href="#">
-					<i class="nav-icon i-Double-Tap"></i>
-					<span class="nav-text">Others</span>
-				</a>
-				<div class="triangle"></div>
-			</li>
+
 			<li class="nav-item">
-				<a class="nav-item-hold" href="http://demos.ui-lib.com/gull-html-doc/" target="_blank">
+				<a class="nav-item-hold" href="" target="_blank">
 					<i class="nav-icon i-Safe-Box1"></i>
 					<span class="nav-text">Doc</span>
 				</a>
@@ -309,9 +265,15 @@
 		{{-- Fin sous menu parametrages --}}
 		<ul class="childNav" data-parent="uikits">
 			<li class="nav-item">
-				<a href="alerts.html">
+				<a href="#">
 					<i class="nav-icon i-Bell1"></i>
 					<span class="item-name">Cycle</span>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="alerts.html">
+					<i class="nav-icon i-File-Copy"></i>
+					<span class="item-name">{{ __('Constat oeuf')}}</span>
 				</a>
 			</li>
 			{{-- <li class="nav-item dropdown-sidemenu">
@@ -419,21 +381,21 @@
 		</ul>
 		<ul class="childNav" data-parent="sessions">
 			<li class="nav-item">
-				<a href="signin.html">
-					<i class="nav-icon i-Checked-User"></i>
-					<span class="item-name">Sign in</span>
+				<a href="#">
+					<i class="nav-icon i-Key"></i>
+					<span class="item-name">Gestion permissions</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="signup.html">
+				<a href="#">
 					<i class="nav-icon i-Add-User"></i>
-					<span class="item-name">Sign up</span>
+					<span class="item-name">Gestion roles</span>
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="forgot.html">
-					<i class="nav-icon i-Find-User"></i>
-					<span class="item-name">Forgot</span>
+				<a href="#">
+					<i class="nav-icon i-Business-Mens"></i>
+					<span class="item-name">Gestion utilisateurs</span>
 				</a>
 			</li>
 		</ul>
