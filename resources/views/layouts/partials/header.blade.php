@@ -114,14 +114,19 @@
 								<div class="header-profile-actions">
 									<div class="header-user-profile">
 										<div class="header-user">
-											<img src="img/user24.png" alt="Admin Template">
+											<img src="{{ asset('img/user24.png') }}" alt="">
 										</div>
-										<h5>Julie Sweet</h5>
-										<p>Admin</p>
+										<h5>{{ Auth::user()->name }}</h5>
+										<p>{{ Auth::user()->email }}</p>
 									</div>
-									<a href="user-profile.html"><i class="icon-user1"></i> My Profile</a>
-									<a href="account-settings.html"><i class="icon-settings1"></i> Account Settings</a>
-									<a href="login.html"><i class="icon-log-out1"></i> Sign Out</a>
+									<a href="#"><i class="icon-user1"></i> {{ __('Profile')}}</a>
+									<a href="#"><i class="icon-settings1"></i> {{ __('Paramètres du compte')}}</a>
+									<a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();><i class="icon-log-out1"></i> {{ __('Se déconnecter')}}</a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 								</div>
 							</div>
 						</li>
