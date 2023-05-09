@@ -121,10 +121,13 @@
 									</div>
 									<a href="#"><i class="icon-user1"></i> {{ __('Profile')}}</a>
 									<a href="#"><i class="icon-settings1"></i> {{ __('Paramètres du compte')}}</a>
-									<a href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();><i class="icon-log-out1"></i> {{ __('Se déconnecter')}}</a>
-									<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                     document.getElementById('logout-form').submit();">
+                                       <i class="icon-log-out1"></i> {{ __('Deconnecter') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
 								</div>
