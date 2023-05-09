@@ -104,6 +104,7 @@ class LivBatiment extends Component
         $this->editBatiment = true;
         $this->createBatiment = false;
         $this->creatBtn = false;
+        $this->afficherListe = false;
     }
 
     public function confirmerUpdate()
@@ -135,6 +136,7 @@ class LivBatiment extends Component
             $this->creatBtn = true;
             $this->notification = true;
             session()->flash('message', 'Modification bien enregistré!');
+            $this->afficherListe = true;
 
         }catch(\Exception $e){
             return $e->getMessage();
@@ -156,6 +158,7 @@ class LivBatiment extends Component
         $this->resetFormBatiment();
         $this->resetValidation();
         $this->creatBtn = true;
+        $this->afficherListe = true;
     }
 
     public function removeNotification()
