@@ -10,7 +10,7 @@ class LivSite extends Component
 {
     use WithPagination;
     public $site_id, $site, $adresse, $actif;
-    public $createSite = true, $updateSite = false;
+    public $createSite = false, $updateSite = false;
 
     public $afficherListe = true;
     public $recordToDelete = null;
@@ -25,7 +25,7 @@ class LivSite extends Component
     
     public function render()
     {
-        $sites = Site::paginate(5);
+        $sites = Site::paginate(6);
 
         return view('livewire.liv-site',[
             'sites' => $sites,
@@ -99,6 +99,7 @@ class LivSite extends Component
         $this->updateSite = true;
         $this->isLoading = false;
         $this->createBtn = false;
+        $this->afficherListe = false;
     }
 
     public function confirmerUpdate()
@@ -150,6 +151,7 @@ class LivSite extends Component
         $this->confirmUpdate = false;
         $this->isLoading = false;
         $this->createBtn = true;
+        $this->afficherListe = true;
 
     }
 
@@ -159,6 +161,7 @@ class LivSite extends Component
         $this->resetInput();
         $this->resetValidation();
         $this->createBtn = true;
+        $this->afficherListe = true;
     }
 
     public function comfirmerDelete($id)

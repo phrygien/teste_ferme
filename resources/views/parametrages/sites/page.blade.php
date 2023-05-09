@@ -1,26 +1,21 @@
 <x-ferme-layout>
+    <div class="main-content-wrap sidenav-open d-flex flex-column">
+        <div class="breadcrumb">
+            <h1>Table</h1>
+            <ul>
+                <li><a href="">Componets</a></li>
+                <li>Table</li>
+            </ul>
+        </div>
 
-<!-- Page header start -->
-<div class="page-header">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">{{ __('Parametrages ')}}</li>
-        <li class="breadcrumb-item active">{{ __('Gestion site')}}</li>
-    </ol>
+        <div class="separator-breadcrumb border-top"></div>
 
-    <ul class="app-actions">
-        <li>
-            <a href="#" id="reportrange">
-                <span class="range-text"></span>
-                <i class="icon-chevron-down"></i>	
-            </a>
-        </li>
-    </ul>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Parametrages globale</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Gestion site</li>
+            </ol>
+          </nav>
+          @livewire('liv-site')
 </div>
-<!-- Page header end -->
-
-<!-- Main container start -->
-        @livewire('liv-site')
-    </div>
-</div>
-<!-- Row end -->
 </x-ferme-layout>
