@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="card mb-4">
         <div class="card-body">
-            <div class="card-title mb-3">{{ __('Modification batiment')}}</div>
+            <div class="card-title mb-3">{{ __('Modification catégorie depense')}}</div>
             <form>
                 <div class="row">
                     <div class="col-md-6 form-group mb-3">
@@ -77,8 +77,8 @@
 <div class="overlay">
     <div class="centered">
     <div class="alert alert-warning text-center">
-        <strong class="text-black">{{ __('Modification catégorie')}} !</strong>
-        <p class="text-black">Vous etes sure de valider la modification</p>
+        <strong class="text-black">{{ __('Modification catégorie depense')}} !</strong>
+        <p class="text-black">Vous etes sure de valider la modification categorie depense</p>
         <p class="text-center">
             <button class="btn btn-secondary btn-rounded" wire:click="cancelModal()">{{ __('Annuler') }}</button>
             <button class="btn btn-danger btn-rounded" wire:click.prevent="updateType()">{{ __('Valider') }}</button>

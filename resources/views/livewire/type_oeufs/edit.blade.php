@@ -66,8 +66,8 @@
 <div class="overlay">
     <div class="centered">
     <div class="alert alert-warning text-center">
-        <strong class="text-black">{{ __('Modification type poulet')}} !</strong>
-        <p class="text-black">Vous etes sure de valider la modification</p>
+        <strong class="text-black">{{ __('Modification type oeuf')}} !</strong>
+        <p class="text-black">Vous etes sure de valider la modification type oeuf</p>
         <p class="text-center">
             <button class="btn btn-secondary btn-rounded" wire:click="cancelModal()">{{ __('Annuler') }}</button>
             <button class="btn btn-danger btn-rounded" wire:click.prevent="updateType()">{{ __('Valider') }}</button>

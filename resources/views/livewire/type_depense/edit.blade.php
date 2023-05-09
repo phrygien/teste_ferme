@@ -82,7 +82,7 @@
     <div class="centered">
     <div class="alert alert-warning text-center">
         <strong class="text-black">{{ __('Modification type type depense')}} !</strong>
-        <p class="text-black">Vous etes sure de valider la modification</p>
+        <p class="text-black">Vous etes sure de valider la modification type depense</p>
         <p class="text-center">
             <button class="btn btn-secondary btn-rounded" wire:click="cancelModal()">{{ __('Annuler') }}</button>
             <button class="btn btn-danger btn-rounded" wire:click.prevent="updateType()">{{ __('Valider') }}</button>
