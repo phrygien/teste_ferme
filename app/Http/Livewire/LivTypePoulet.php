@@ -87,6 +87,7 @@ class LivTypePoulet extends Component
         $this->createType = false;
         $this->btnCreate = false;
         $this->isLoading = false;
+        $this->afficherListe = false;
     }
 
     public function removeNotification()
@@ -128,6 +129,7 @@ class LivTypePoulet extends Component
             $this->resetInput();
             $this->resetValidation();
             $this->confirmUpdate = false;
+            $this->afficherListe = true;
             $this->btnCreate = true;
 
             $this->isLoading = false;
@@ -156,7 +158,7 @@ class LivTypePoulet extends Component
         $this->resetInput();
         $this->resetValidation();
         $this->btnCreate = true;
-
+        $this->afficherListe = true;
         $this->isLoading = false;
     }
 
