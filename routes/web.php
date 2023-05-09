@@ -9,6 +9,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\Site\SiteController;
+use App\Http\Controllers\TypedepenseController;
 use App\Http\Controllers\TypeoeufController;
 use App\Http\Controllers\TypepouletController;
 
@@ -34,4 +35,5 @@ Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
     Route::get('type_poulet', [TypepouletController::class, 'page'])->name('parametrages.type_poulets');
     Route::get('type_oeuf', [TypeoeufController::class, 'page'])->name('parametrages.type_oeufs');
     Route::get('categorie_depense', [CategoriedepenseController::class, 'page'])->name('parametrages.categorie_depenses');
+    Route::get('type_depense', [TypedepenseController::class, 'page'])->name('parametrages.type_depenses');
 });

@@ -244,7 +244,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="toastr.html">
+				<a href="{{ route('parametrages.type_depenses')}}">
 					<i class="nav-icon i-Dollar-Sign"></i>
 					<span class="item-name">{{ __('Type dépense')}}</span>
 				</a>
