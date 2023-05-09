@@ -9,16 +9,11 @@ class TypeDepense extends Model
 {
     use HasFactory;
 
-    protected $table = "type_depenses";
+    protected $table ="type_depenses";
 
     protected $fillable = [
         'type',
-        'id_charge',
-        'actif'
+        'id_categorie',
+        'actif',
     ];
-
-    public function charge()
-    {
-        return $this->belongsTo(TypeCharge::class, 'id_charge');
-    }
 }
