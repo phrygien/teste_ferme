@@ -159,7 +159,7 @@ class LivTypeOeuf extends Component
         $this->resetInput();
         $this->resetValidation();
         $this->btnCreate = true;
-
+        $this->afficherListe = true;
         $this->isLoading = false;
     }
 
