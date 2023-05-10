@@ -265,9 +265,9 @@
 		{{-- Fin sous menu parametrages --}}
 		<ul class="childNav" data-parent="gentree">
 			<li class="nav-item">
-				<a href="#">
-					<i class="nav-icon i-Bell1"></i>
-					<span class="item-name">Cycle</span>
+				<a href="{{ route('gestion_entree.cycles')}}">
+					<i class="nav-icon i-Shopping-Basket"></i>
+					<span class="item-name">Gestion Cycle</span>
 				</a>
 			</li>
 			<li class="nav-item">

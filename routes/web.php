@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BatimentController;
 use App\Http\Controllers\CategoriedepenseController;
+use App\Http\Controllers\Entree\CycleController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -36,4 +37,8 @@ Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
     Route::get('type_oeuf', [TypeoeufController::class, 'page'])->name('parametrages.type_oeufs');
     Route::get('categorie_depense', [CategoriedepenseController::class, 'page'])->name('parametrages.categorie_depenses');
     Route::get('type_depense', [TypedepenseController::class, 'page'])->name('parametrages.type_depenses');
+});
+
+Route::group(['prefix' => 'gestion_entree', 'middleware' => 'auth'], function(){
+    Route::get('cycle', [CycleController::class, 'page'])->name('gestion_entree.cycles');
 });
