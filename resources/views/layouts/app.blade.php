@@ -176,7 +176,7 @@
     <!-- ============ Search UI Start ============= -->
     <div class="search-ui">
         <div class="search-header o-hidden">
-            <img src="{{ asset('assets/images/logo.png') }}" alt="" class="logo float-left">
+            <img src="{{ asset('assets/images/logo.avif') }}" alt="" class="logo float-left">
             <button class="search-close btn btn-icon bg-transparent float-right mt-2">
                 <i class="i-Close-Window text-22 text-muted"></i>
             </button>
