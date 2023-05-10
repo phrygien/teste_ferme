@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BatimentController;
 use App\Http\Controllers\CategoriedepenseController;
+use App\Http\Controllers\Entree\ConstatoeufController;
 use App\Http\Controllers\Entree\CycleController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,4 +42,5 @@ Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
 
 Route::group(['prefix' => 'gestion_entree', 'middleware' => 'auth'], function(){
     Route::get('cycle', [CycleController::class, 'page'])->name('gestion_entree.cycles');
+    Route::get('constat_oeuf', [ConstatoeufController::class, 'page'])->name('gestion_entree.constat_oeufs');
 });
