@@ -166,7 +166,9 @@ class LivSite extends Component
 
     public function comfirmerDelete($id)
     {
+        $this->isLoading = true;
         $this->recordToDelete = Site::findOrFail($id);
+        $this->isLoading = false;
     }
 
     public function cancelDelete()
@@ -183,9 +185,7 @@ class LivSite extends Component
         $this->notification = true;
         session()->flash('message', 'Suppression avec sucée');
         }catch(\Exception $e){
-            $this->notification = true;
-            session()->flash('error', 'Opperation imposible, le site est déja utilisé!');
-            $this->recordToDelete = null;
+            session()->flash('error', 'Impossible de supprimer le site. Il est déja utilisé !');
         }
     }
 }

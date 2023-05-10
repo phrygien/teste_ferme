@@ -80,7 +80,13 @@
         <p class="text-black">Vous etes sure de valider la modification</p>
         <p class="text-center">
             <button class="btn btn-secondary btn-rounded" wire:click="cancelModal()">{{ __('Annuler') }}</button>
-            <button class="btn btn-danger btn-rounded" wire:click.prevent="update()">{{ __('Valider') }}</button>
+            <button class="btn btn-danger btn-rounded" wire:click.prevent="update()" wire:loading.attr="disabled" wire:target="update">
+                <span wire:loading.remove wire:target="update">{{ __('Valider') }}</span>
+                <span wire:loading wire:target="update">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    validation...
+                </span>
+            </button>
         </p>
     </div>
     </div>

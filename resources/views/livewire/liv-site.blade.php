@@ -65,9 +65,19 @@
                     <div class="alert alert-warning text-center">
                         <strong class="text-black">Suppression site !</strong>
                         <p class="text-black">Vous etes sure de supprimer le site : {{$recordToDelete->site }}?</p>
+                        @if (session()->has('error'))
+                        <div class="alert alert-warning border-danger" role="alert">
+                            <i class="icon-info1"></i>{{ session('error')}}
+                        </div>
+                        @endif
                         <p class="text-center">
                             <button class="btn btn-secondary btn-rounded" wire:click="cancelDelete()">{{ __('Annuler') }}</button>
-                            <button class="btn btn-danger btn-rounded" wire:click="delete()">{{ __('Supprimer') }}</button>
+                            <button class="btn btn-danger btn-rounded" wire:click="delete()" wire:loading.attr="disabled" wire:target="delete">
+                                <span wire:loading.remove wire:target="delete"> {{ __('Supprimer') }}</span>
+                                <svg wire:loading wire:target="delete"  class="spinner" viewBox="0 0 50 50">
+                                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+                                </svg>
+                            </button>
                         </p>
                     </div>
                     </div>
@@ -107,13 +117,15 @@
                                 <td>
                                     <button wire:click="edit({{$site->id }})" wire:loading.attr="disabled" wire:target="edit({{$site->id }})" class="btn btn-raised btn-rounded btn-raised-primary">
                                         <span wire:loading.remove wire:target="edit({{$site->id }})"><i class="nav-icon i-Pen-2 font-weight-bold"></i></span>
-                                        <span wire:loading wire:target="edit({{$site->id }})">
-                                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                            modification...
-                                        </span>
+                                        <svg wire:loading wire:target="edit({{$site->id }})"  class="spinner" viewBox="0 0 50 50">
+                                            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+                                        </svg>
                                     </button>
-                                    <button class="btn btn-raised btn-rounded btn-raised-danger"  wire:click="comfirmerDelete({{$site->id }})">
-                                        <i class="nav-icon i-Close-Window font-weight-bold"></i>
+                                    <button class="btn btn-raised btn-rounded btn-raised-danger"  wire:click="comfirmerDelete({{$site->id }})" wire:loading.attr="disabled" wire:target="confirmerDelete({{$site->id }})">
+                                        <span wire:loading.remove wire:target="comfirmerDelete({{$site->id }})"><i class="nav-icon i-Close-Window font-weight-bold"></i></span>
+                                        <svg wire:loading wire:target="comfirmerDelete({{$site->id }})"  class="spinner" viewBox="0 0 50 50">
+                                            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+                                        </svg>
                                     </button>
                                 </td>
                             </tr>                                  
