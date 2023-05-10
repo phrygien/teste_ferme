@@ -43,4 +43,5 @@ Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
 Route::group(['prefix' => 'gestion_entree', 'middleware' => 'auth'], function(){
     Route::get('cycle', [CycleController::class, 'page'])->name('gestion_entree.cycles');
     Route::get('constat_oeuf', [ConstatoeufController::class, 'page'])->name('gestion_entree.constat_oeufs');
+    Route::get('donnee_du_jour_constat_oeuf', [ConstatoeufController::class, 'donneeJournalierConstat'])->name('gestion_entree.donnee_du_jour_constat_oeuf');
 });

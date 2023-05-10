@@ -17,7 +17,8 @@
     <script src="{{ asset('assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/echarts.min.js') }}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ asset('assets/js/vendor/pickadate/picker.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/pickadate/picker.date.js') }}"></script>
     <script src="{{ asset('assets/js/form.basic.script.js') }}"></script>

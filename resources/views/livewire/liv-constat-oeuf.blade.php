@@ -1,5 +1,7 @@
 
+
 <div class="row mb-4">
+
     @if($notification)
     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
         <div id="notification" wire:transition.fade.out.500ms>
@@ -12,7 +14,6 @@
     <div wire:poll.5s="hideNotification"></div>
     </div>
     @endif
-
     @if($createConstat)
         @include('livewire.constat_oeufs.create')
     @endif
@@ -21,7 +22,20 @@
         @include('livewire.constat_oeufs.edit')
     @endif
 
-    @if ($afficherListe)
+@if($afficherListe)
+<div class="col-md-12 col-xs-12 col-lg-12 mb-2">
+    <div class="card">
+        <div class="card-header">
+            <p class="card-title">Donées du jours</p>
+        </div>
+        <div class="card-body">
+            <livewire:donneejour-constant-oeuf />
+        </div>
+    </div>
+</div>
+@endif
+
+@if ($afficherListe)
     <div class="col-md-12 mb-3">
         <div class="card text-left">
 
@@ -127,6 +141,15 @@
     @endif
 </div>
 
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Contenu de la fenêtre modale -->
+      </div>
+    </div>
+  </div>
+
+  
 @push('scripts')
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
@@ -138,3 +161,28 @@
         });
     </script>
 @endpush
+
+<script>
+// Initialisez le graphique avec l'élément HTML ciblé par son ID.
+var chart = echarts.init(document.getElementById('chart'));
+
+// Récupérez les données et les labels à partir du résultat de la requête
+var data = @json($totalDonneesJournalieres->pluck('total')->toArray());
+var labels = @json($totalDonneesJournalieres->pluck('nom_type_oeuf')->toArray());
+
+// Configurez les options du graphique.
+var options = {
+  series: [
+    {
+      type: 'pie',
+      data: data.map(function(value, index) {
+        return { value: value, name: labels[index] };
+      })
+    }
+  ]
+};
+
+// Appliquez les options au graphique.
+chart.setOption(options);
+
+    </script>

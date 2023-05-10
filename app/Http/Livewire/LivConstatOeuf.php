@@ -7,6 +7,7 @@ use App\Models\ConstatOeuf;
 use App\Models\Cycle;
 use App\Models\TypeOeuf;
 use DateTime;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Livewire\Component;
@@ -35,7 +36,8 @@ class LivConstatOeuf extends Component
     protected $paginationTheme = 'bootstrap';
     public $notification;
     //public $;
-    
+    // public $data = [];
+    // public $labels = [];
 
     public function mount()
     {
@@ -44,6 +46,15 @@ class LivConstatOeuf extends Component
         $this->typeOeufActifs = TypeOeuf::where('actif', 1)->get();
         $this->cycleActifs = Cycle::where('actif', 1)->get();
         $this->id_utilisateur = Auth::user()->id;
+        //$this->chargerDonneesChart();
+    }
+
+    public function afficherTotalDonneesJournalieres()
+    {
+        $totalDonneesJournalieres = ConstatOeuf::whereDate('date_entree', today())
+            ->groupBy('id_type_oeuf')
+            ->selectRaw('id_type_oeuf, SUM(nb) as total')
+            ->get();
     }
 
     public function render()
@@ -55,8 +66,15 @@ class LivConstatOeuf extends Component
             ->select('constat_oeufs.*', 'type_oeufs.type', 'cycles.description', 'users.name')
             ->paginate(5);
 
+            $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
+            ->whereDate('date_entree', today())
+            ->groupBy('id_type_oeuf', 'type_oeufs.type')
+            ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
+            ->get();
+
         return view('livewire.liv-constat-oeuf', [
-            'constats' => $constats
+            'constats' => $constats,
+            'totalDonneesJournalieres' => $totalDonneesJournalieres,
         ]);
     }
 
@@ -220,4 +238,21 @@ class LivConstatOeuf extends Component
         session()->flash('message', 'Suppression avec succée');
     }
 
+
+    // /*
+    // * chart
+    // */ 
+    // public function chargerDonneesChart()
+    // {
+    //     $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
+    //         ->whereDate('date_entree', Carbon::today())
+    //         ->groupBy('id_type_oeuf', 'type_oeufs.type')
+    //         ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
+    //         ->get();
+
+    //     $this->data = $totalDonneesJournalieres->pluck('total')->toArray();
+    //     $this->labels = $totalDonneesJournalieres->pluck('nom_type_oeuf')->toArray();
+
+    //     $this->emit('chartUpdated');
+    // }
 }

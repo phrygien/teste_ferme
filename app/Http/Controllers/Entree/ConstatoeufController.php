@@ -11,4 +11,9 @@ class ConstatoeufController extends Controller
     {
         return view('gestion_entrees/constat_oeufs/page');
     }
+
+    public function donneeJournalierConstat()
+    {
+        return view('gestion_entrees/constat_oeufs/donnee_journalier');
+    }
 }
