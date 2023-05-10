@@ -43,7 +43,7 @@
     <div class="app-admin-wrap layout-sidebar-large clearfix">
         <div class="main-header">
             <div class="logo">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="">
+                <img src="{{ asset('assets/images/logo.avif') }}" alt="">
             </div>
 
             <div class="menu-toggle">
@@ -149,9 +149,13 @@
                             <div class="dropdown-header">
                                 <i class="i-Lock-User mr-1"></i> {{ Auth::user()->name }}
                             </div>
-                            <a class="dropdown-item">Account settings</a>
-                            <a class="dropdown-item">Billing history</a>
-                            <a class="dropdown-item" href="signin.html">Sign out</a>
+                            <a class="dropdown-item">{{ __('Paramètres du compte')}}</a>
+                            <a  class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">{{ __('Se déconnecter')}}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>
