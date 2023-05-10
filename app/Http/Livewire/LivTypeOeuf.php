@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\ConstatOeuf;
 use App\Models\TypeOeuf;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -165,7 +166,9 @@ class LivTypeOeuf extends Component
 
     public function confirmerDelete($id)
     {
+        $this->isLoading = true;
         $this->recordToDelete = TypeOeuf::findOrFail($id);
+        $this->isLoading = false;
     }
 
     public function cancelDelete()
@@ -175,11 +178,15 @@ class LivTypeOeuf extends Component
 
     public function delete()
     {
+        try{
         $this->recordToDelete->delete();
         $this->recordToDelete = null;
         $this->notification = true;
         session()->flash('message', 'Suppression avec sucée');
-
+        }catch(\Exception $e){
+            //$this->notification = true;
+            session()->flash('error', 'Impossible de supprimer le type oeuf. Il est déja utilisé !');
+        }
     }
 
 }

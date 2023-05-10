@@ -70,7 +70,13 @@
         <p class="text-black">Vous etes sure de valider la modification type oeuf</p>
         <p class="text-center">
             <button class="btn btn-secondary btn-rounded" wire:click="cancelModal()">{{ __('Annuler') }}</button>
-            <button class="btn btn-danger btn-rounded" wire:click.prevent="updateType()">{{ __('Valider') }}</button>
+            <button class="btn btn-danger btn-rounded" wire:click.prevent="updateType()">
+                <span wire:loading.remove wire:target="updateType">{{ __('Valider') }}</span>
+                <span wire:loading wire:target="updateType">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    validation...
+                </span>
+            </button>
         </p>
     </div>
     </div>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/styles/vendor/perfect-scrollbar.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/styles/vendor/pickadate/classic.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/styles/vendor/pickadate/classic.date.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/css/spiner.css')}}">
 	@livewireStyles
 	
     <script src="{{ asset('assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
