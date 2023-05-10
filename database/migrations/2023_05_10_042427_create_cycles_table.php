@@ -16,12 +16,14 @@ class CreateCyclesTable extends Migration
         Schema::create('cycles', function (Blueprint $table) {
             $table->id();
             $table->string('description')->unique();
-            $table->integer('id_type_poulet');
+            $table->unsignedBigInteger('id_type_poulet');
             $table->integer('nb_poulet');
-            $table->integer('id_batiment');
+            $table->unsignedBigInteger('id_batiment');
             $table->string('date_entre');
             $table->integer('actif');
             $table->integer('id_utilisateur');
+            $table->foreign('id_type_poulet')->references('id')->on('type_poulets');
+            $table->foreign('id_batiment')->references('id')->on('batiments');
             $table->timestamps();
         });
     }

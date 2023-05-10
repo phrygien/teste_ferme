@@ -9,13 +9,13 @@
         </div>
 
         <div class="separator-breadcrumb border-top"></div>
-
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Gestion entrée</a></li>
               <li class="breadcrumb-item active" aria-current="page">Cycle</li>
             </ol>
           </nav>
-          
+          @livewire('liv-cycle')
 </div>
+
 </x-ferme-layout>

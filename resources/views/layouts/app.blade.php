@@ -9,7 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet">
     <link id="gull-theme" rel="stylesheet" href="{{ asset('assets/styles/css/themes/lite-purple.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/styles/vendor/perfect-scrollbar.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('assets/styles/vendor/pickadate/classic.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/vendor/pickadate/classic.date.css') }}">
 	@livewireStyles
 	
     <script src="{{ asset('assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
@@ -17,9 +18,12 @@
     <script src="{{ asset('assets/js/vendor/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/echarts.min.js') }}"></script>
 
+    <script src="{{ asset('assets/js/vendor/pickadate/picker.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/pickadate/picker.date.js') }}"></script>
+    <script src="{{ asset('assets/js/form.basic.script.js') }}"></script>
+    
     <script src="{{ asset('assets/js/es5/echart.options.min.js') }}"></script>
     <script src="{{ asset('assets/js/es5/dashboard.v1.script.min.js') }}"></script>
-
     <script src="{{ asset('assets/js/es5/script.min.js') }}"></script>
     <script src="{{ asset('assets/js/es5/sidebar.large.script.min.js') }}"></script>
 
