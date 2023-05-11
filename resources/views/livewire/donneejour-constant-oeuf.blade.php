@@ -7,14 +7,14 @@
         <thead>
             <tr>
                 <th scope="col">{{ __('Type de oeuf')}}</th>
-                <th scope="col" class="text-danger" width="270px">{{ __('Total constat ')}} - du - {{ $selectedDate }}</th>
+                <th scope="col" class="text-primary" width="340px">{{ __('Total constat ')}} - du - {{ $selectedDate }} - par type oeuf</th>
             </tr>
         </thead>
         <tbody>
             @forelse($totalDonneesJournalieres as $donnees)
             <tr>
                 <td>{{ $donnees['nom_type_oeuf'] }}</td>
-                <td><span class="badge bg-primary text-white">{{ $donnees['total'] }}</span></td>
+                <td><span class="badge bg-secondary text-white">{{ $donnees['total'] }}</span></td>
             </tr>
             @empty
                 <div class="alert alert-info text-center">
