@@ -18,5 +18,6 @@ class Cycle extends Model
         'date_entre',
         'actif',
         'id_utilisateur',
+        'date_fermeture'
     ];
 }

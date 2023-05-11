@@ -21,7 +21,7 @@ class LivCycle extends Component
     public $createCycle = false, $editCycle= false;
 
     public $cycle_id, $description, $id_type_poulet, $actif,
-    $nb_poulet, $id_batiment, $date_entre, $id_utilisateur;
+    $nb_poulet, $id_batiment, $date_entre, $id_utilisateur, $date_fermeture;
     
     public $batimentsActif;
     public $typePouletActif;
@@ -32,6 +32,7 @@ class LivCycle extends Component
     public $confirmUpdate;
 
     public $recordToDelete;
+    public $recordToClose;
     public $isLoading;
     public $creatBtn = true;
     protected $paginationTheme = 'bootstrap';
@@ -42,6 +43,7 @@ class LivCycle extends Component
     public function mount()
     {
         $this->date_entre = date('Y-m-d');
+        $this->date_fermeture = date('Y-m-d');
         $this->typePouletActif = TypePoulet::where('actif', 1)->get();
         $this->id_utilisateur = Auth::user()->id;
     }
@@ -265,18 +267,29 @@ class LivCycle extends Component
         }
     }
 
+    public function comfirmerFermeture($id)
+    {
+        $this->recordToClose = Cycle::findOrFail($id);
+    }
+
     public function setCycleInactif()
     {
         try{
-            $this->recordToDelete->update([
-                'actif' => 0,
+            $this->recordToClose->update([
                 'id_utilisateur' => $this->id_utilisateur,
+                'date_fermeture' => $this->date_fermeture,
             ]);
-            session()->flash('inactif', 'Desactivation avec succée !');
-            $this->recordToDelete = null;
+            session()->flash('message', 'Cycle bien fermé !');
+            $this->recordToClose = null;
         }catch(\Exception $e){
             //$this->notification = true;
-            session()->flash('inactif', 'Desactivation avec succée !');
+            session()->flash('message', 'Fermeture du cycle echoue !');
         }
     }
+
+    public function cancelClose()
+    {
+        $this->recordToClose = null;
+    }
+
 }

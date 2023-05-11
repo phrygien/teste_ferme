@@ -8,34 +8,50 @@ use Livewire\Component;
 
 class DonneejourConstantOeuf extends Component
 {
+    public $data = [];
+    public $labels = [];
     public $selectedDate;
-    public $totalDonneesJournalieres = [];
 
     public function mount()
     {
-        $this->selectedDate = today()->toDateString();
-        $this->chargerDonneesChart();
+        $this->selectedDate = now()->toDateString();
+        $this->updateChart();
     }
 
-    public function render()
+    public function updateChart()
     {
-        return view('livewire.donneejour-constant-oeuf');
-    }
-
-    public function chargerDonneesChart()
-    {
-        $this->totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
-            ->whereDate('date_entree', $this->selectedDate) // Remplacez 'votre_champ_de_date' par le nom correct de votre champ de date
+        $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
+            ->whereDate('date_entree', $this->selectedDate)
             ->groupBy('id_type_oeuf', 'type_oeufs.type')
             ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
             ->get();
 
-        $this->emit('chartUpdated', $this->totalDonneesJournalieres->toArray());
+        $this->data = $totalDonneesJournalieres->pluck('total')->toArray();
+        $this->labels = $totalDonneesJournalieres->pluck('nom_type_oeuf')->toArray();
+    }
+    
+    public function chargerDonneesChart()
+    {
+        $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
+            ->whereDate('date_entree', Carbon::today())
+            ->groupBy('id_type_oeuf', 'type_oeufs.type')
+            ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
+            ->get();
+
+        $this->data = $totalDonneesJournalieres->pluck('total')->toArray();
+        $this->labels = $totalDonneesJournalieres->pluck('nom_type_oeuf')->toArray();
+
+        $this->emit('chartUpdated');
     }
 
-    public function updatedSelectedDate($value)
+    public function render()
     {
-        $this->selectedDate = $value;
-        $this->chargerDonneesChart();
+        $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
+        ->whereDate('date_entree', today())
+        ->groupBy('id_type_oeuf', 'type_oeufs.type')
+        ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
+        ->get();
+
+        return view('livewire.donneejour-constant-oeuf', compact('totalDonneesJournalieres'));
     }
 }

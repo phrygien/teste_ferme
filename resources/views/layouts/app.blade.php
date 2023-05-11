@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/styles/vendor/pickadate/classic.date.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/styles/css/spiner.css')}}">
 	@livewireStyles
+    @stack('styles')
 	
     <script src="{{ asset('assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/vendor/bootstrap.bundle.min.js') }}"></script>
