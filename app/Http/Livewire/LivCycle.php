@@ -53,6 +53,7 @@ class LivCycle extends Component
             ->join('type_poulets', 'type_poulets.id', 'cycles.id_type_poulet')
             ->join('sites', 'sites.id', 'batiments.id_site')
             ->select('cycles.*', 'batiments.nom', 'sites.site', 'type_poulets.type')
+            ->where('cycles.actif', 1)
             ->paginate(2);
 
         $sites = $this->getSites();
@@ -251,10 +252,31 @@ class LivCycle extends Component
 
     public function delete()
     {
+        try{
+
         $this->recordToDelete->delete();
         $this->recordToDelete = null;
         $this->notification = true;
         session()->flash('message', 'Suppression avec succée');
+
+        }catch(\Exception $e){
+            //$this->notification = true;
+            session()->flash('error', 'Impossible de supprimer le cycle. Il est déja utilisé !');
+        }
     }
 
+    public function setCycleInactif()
+    {
+        try{
+            $this->recordToDelete->update([
+                'actif' => 0,
+                'id_utilisateur' => $this->id_utilisateur,
+            ]);
+            session()->flash('inactif', 'Desactivation avec succée !');
+            $this->recordToDelete = null;
+        }catch(\Exception $e){
+            //$this->notification = true;
+            session()->flash('inactif', 'Desactivation avec succée !');
+        }
+    }
 }
