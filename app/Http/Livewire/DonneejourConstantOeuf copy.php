@@ -13,8 +13,8 @@ class DonneejourConstantOeuf extends Component
 
     public function mount()
     {
-        $this->selectedDate = today()->toDateString();
-        $this->chargerDonneesChart();
+        $this->selectedDate = date('Y-m-d');
+        $this->loadChartData();
     }
 
     public function render()
@@ -22,20 +22,20 @@ class DonneejourConstantOeuf extends Component
         return view('livewire.donneejour-constant-oeuf');
     }
 
-    public function chargerDonneesChart()
+    public function loadChartData()
     {
         $this->totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
-            ->whereDate('date_entree', $this->selectedDate) // Remplacez 'votre_champ_de_date' par le nom correct de votre champ de date
+            ->whereDate('date_entree', $this->selectedDate)
             ->groupBy('id_type_oeuf', 'type_oeufs.type')
             ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
-            ->get();
+            ->get()
+            ->toArray();
 
-        $this->emit('chartUpdated', $this->totalDonneesJournalieres->toArray());
+        $this->emit('chartUpdated', $this->totalDonneesJournalieres);
     }
 
-    public function updatedSelectedDate($value)
+    public function updatedSelectedDate()
     {
-        $this->selectedDate = $value;
-        $this->chargerDonneesChart();
+        $this->loadChartData();
     }
 }

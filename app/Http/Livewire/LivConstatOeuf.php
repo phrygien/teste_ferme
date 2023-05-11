@@ -39,6 +39,11 @@ class LivConstatOeuf extends Component
     // public $data = [];
     // public $labels = [];
 
+    public $data = [];
+    public $labels = [];
+    public $selectedDate;
+
+
     public function mount()
     {
         $this->date_entree = date('Y-m-d');
@@ -47,6 +52,8 @@ class LivConstatOeuf extends Component
         $this->cycleActifs = Cycle::where('actif', 1)->get();
         $this->id_utilisateur = Auth::user()->id;
         //$this->chargerDonneesChart();
+        $this->selectedDate = Date::today()->format('Y-m-d');
+        $this->chargerDonneesChart();
     }
 
     public function afficherTotalDonneesJournalieres()
@@ -239,20 +246,17 @@ class LivConstatOeuf extends Component
     }
 
 
-    // /*
-    // * chart
-    // */ 
-    // public function chargerDonneesChart()
-    // {
-    //     $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
-    //         ->whereDate('date_entree', Carbon::today())
-    //         ->groupBy('id_type_oeuf', 'type_oeufs.type')
-    //         ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
-    //         ->get();
+    public function chargerDonneesChart()
+    {
+        $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
+            ->whereDate('date_entree', $this->selectedDate)
+            ->groupBy('id_type_oeuf', 'type_oeufs.type')
+            ->selectRaw('id_type_oeuf, type_oeufs.type as nom_type_oeuf, SUM(nb) as total')
+            ->get();
 
-    //     $this->data = $totalDonneesJournalieres->pluck('total')->toArray();
-    //     $this->labels = $totalDonneesJournalieres->pluck('nom_type_oeuf')->toArray();
+        $this->data = $totalDonneesJournalieres->pluck('total')->toArray();
+        $this->labels = $totalDonneesJournalieres->pluck('nom_type_oeuf')->toArray();
 
-    //     $this->emit('chartUpdated');
-    // }
+        $this->emit('chartUpdated');
+    }
 }

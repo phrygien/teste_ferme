@@ -316,6 +316,8 @@
     </div>
     <!-- ============ Search UI End ============= -->
 	@livewireScripts
+    @stack('scripts')
+
 </body>
 
 </html>
