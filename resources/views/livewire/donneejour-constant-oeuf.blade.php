@@ -7,16 +7,20 @@
         <thead>
             <tr>
                 <th scope="col">{{ __('Type de oeuf')}}</th>
-                <th scope="col" width="270px">{{ __('Total constat ')}} - du - {{ $selectedDate }}</th>
+                <th scope="col" class="text-danger" width="270px">{{ __('Total constat ')}} - du - {{ $selectedDate }}</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($totalDonneesJournalieres as $donnees)
+            @forelse($totalDonneesJournalieres as $donnees)
             <tr>
                 <td>{{ $donnees['nom_type_oeuf'] }}</td>
                 <td><span class="badge bg-primary text-white">{{ $donnees['total'] }}</span></td>
             </tr>
-            @endforeach
+            @empty
+                <div class="alert alert-info text-center">
+                        {{ __('Pas de constat oeuf disponible !')}}
+                </div>
+            @endforelse ($totalDonneesJournalieres as $donnees)
         </tbody>
     </table>
 </div>
