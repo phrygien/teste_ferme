@@ -96,6 +96,50 @@
                 </script>
                 @endif
 
+                    {{-- confirmer avant fermeture cycle--}}
+                    @if($recordToClose)
+                    <!-- CSS -->
+                    <style>
+                        .overlay {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        background-color: rgba(0, 0, 0, 0.5);
+                        z-index: 9999;
+                        }
+                        
+                        .centered {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        }
+                    </style>
+      
+                    <!-- HTML -->
+                    <div class="overlay">
+                        <div class="centered">
+                        <div class="alert alert-warning text-center">
+                            <strong class="text-black">Fermeture du cycle !</strong>
+                            <p class="text-black">Vous etes sure de fermer cete cycle : {{$recordToClose->description }}?</p>
+                            <p class="text-center">
+                                <button class="btn btn-secondary btn-rounded" wire:click="cancelClose()">{{ __('Annuler') }}</button>
+                                <button class="btn btn-danger btn-rounded" wire:click="setCycleInactif()">{{ __('Fermer') }}</button>
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+      
+                    <script>
+                        // Désactiver le clic sur le reste de la page
+                        document.querySelector('.overlay').addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        });
+                    </script>
+                    @endif
+                    {{-- fin confirmation--}}
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
@@ -106,7 +150,7 @@
                                 <th scope="col">{{ __('Batiment')}}</th>
                                 <th scope="col">{{ __('Date entrée')}}</th>
                                 <th scope="col">{{ __('Status')}}</th>
-                                <th scope="col" width="149px">{{ __('Actions')}}</th>
+                                <th scope="col" width="248px">{{ __('Actions')}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -126,6 +170,17 @@
                                     @endif
                                 </td>
                                 <td>
+                                    @if($cycle->actif == 1)
+                                    <button wire:click="comfirmerFermeture({{$cycle->id }})" wire:loading.attr="disabled" wire:target="comfirmerFermeture({{$cycle->id }})" class="btn btn-raised btn-rounded btn-raised-warning">
+                                        <span wire:loading.remove wire:target="comfirmerFermeture({{$cycle->id }})"><i class="nav-icon i-Broke-Link-2 font-weight-bold"></i></span>
+                                        <span wire:loading wire:target="comfirmerFermeture({{$cycle->id }})">
+                                            <svg wire:loading wire:target="comfirmerFermeture({{$cycle->id }})"  class="spinner" viewBox="0 0 50 50">
+                                                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    @endif 
+
                                     <button wire:click="editCycle({{$cycle->id }})" wire:loading.attr="disabled" wire:target="editCycle({{$cycle->id }})" class="btn btn-raised btn-rounded btn-raised-primary">
                                         <span wire:loading.remove wire:target="editCycle({{$cycle->id }})"><i class="nav-icon i-Pen-2 font-weight-bold"></i></span>
                                         <span wire:loading wire:target="editCycle({{$cycle->id }})">
