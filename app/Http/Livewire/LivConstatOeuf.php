@@ -71,7 +71,7 @@ class LivConstatOeuf extends Component
             ->join('cycles', 'cycles.id', 'constat_oeufs.id_cycle')
             ->join('users', 'users.id', 'constat_oeufs.id_utilisateur')
             ->select('constat_oeufs.*', 'type_oeufs.type', 'cycles.description', 'users.name')
-            ->paginate(5);
+            ->paginate(2);
 
             $totalDonneesJournalieres = ConstatOeuf::join('type_oeufs', 'constat_oeufs.id_type_oeuf', '=', 'type_oeufs.id')
             ->whereDate('date_entree', today())
