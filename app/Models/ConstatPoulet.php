@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class ConstatPoulet extends Model
 {
     use HasFactory;
+
+    protected $table = "constat_poulets";
+
+    protected $fillable = [
+        'id_type_poulet',
+        'nb',
+        'id_cycle',
+        'date_constat',
+        'id_utilisateur',
+        'date_action'
+    ];
 }

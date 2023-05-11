@@ -291,7 +291,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="alerts.html">
+				<a href="{{ route('gestion_entree.constat_poulets')}}">
 					<i class="nav-icon i-File-Copy"></i>
 					<span class="item-name">{{ __('Constat poulet')}}</span>
 				</a>
