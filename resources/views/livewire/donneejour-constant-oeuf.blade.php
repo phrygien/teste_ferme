@@ -16,8 +16,8 @@
                       @forelse ($constatsDuJour as $constat)
                       <tr>
                           <th scope="row">{{ $constat->type }}</th>
-                          <th><span class="badge bg-success text-white text-10">{{ $constat->total_nb }} poulets</span></th>
-                          <td><span class="badge bg-info text-white text-10">{{ $constat->total_constats }} constat(s)</span></td>
+                          <th><span class="badge bg-success text-white text-14">{{ $constat->total_nb }} poulets</span></th>
+                          <td><span class="badge bg-info text-white text-14">{{ $constat->total_constats }} constat(s)</span></td>
                       </tr>
                       @empty
                           <div class="text-center">
