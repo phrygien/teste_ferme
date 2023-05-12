@@ -23,7 +23,7 @@
     @endif
     {{-- @livewire('donneejour-constant-oeuf') --}}
 @if($afficherListe)
-<livewire:donneejour-constant-oeuf />
+<livewire:constat-poulet-du-jours />
 
 <div class="col-md-12">
     <div class="card text-left">

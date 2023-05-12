@@ -55,7 +55,7 @@ class LivConstatPoulet extends Component
             ->join('cycles', 'cycles.id', 'constat_poulets.id_cycle')
             ->join('users', 'users.id', 'constat_poulets.id_utilisateur')
             ->select('constat_poulets.*', 'type_poulets.type', 'cycles.description', 'users.name')
-            ->paginate(2);
+            ->paginate(10);
 
         return view('livewire.liv-constat-poulet', [
             'constats' => $constats
