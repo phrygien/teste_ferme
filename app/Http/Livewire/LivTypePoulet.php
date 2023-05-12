@@ -111,7 +111,7 @@ class LivTypePoulet extends Component
         $this->isLoading = true;
 
         $this->validate([
-            'type' => 'required|unique:type_oeufs,type,' . $this->type_id,
+            'type' => 'required|unique:type_poulets,type,' . $this->type_id,
             'actif' => 'required'
         ]);
 
