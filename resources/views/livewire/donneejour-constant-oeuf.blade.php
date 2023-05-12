@@ -1,51 +1,35 @@
-<div class="col-lg-12 col-sm-12">
-    <div class="card mb-4">
-        <div class="card-body">
-            <div class="card-title">{{ __('Constats du jour')}}</div>
-            <div id="chart" style="height: 300px;"></div>
-        </div>
-    </div>
+<div class="col-md-12 mb-3">
+  <div class="card text-left">
+
+      <div class="card-body">
+          <h4 class="card-title mb-3">Raports constat du jour par type oeuf</h4>
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th scope="col">{{ __('Type oeuf')}}</th>
+                          <th scope="col">{{ __('Somme du nombre oeuf')}}</th>
+                          <th scope="col" width="149px">{{ __('Total')}}</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @forelse ($constatsDuJour as $constat)
+                      <tr>
+                          <th scope="row">{{ $constat->type }}</th>
+                          <th><span class="badge bg-success text-white text-10">{{ $constat->total_nb }} poulets</span></th>
+                          <td><span class="badge bg-info text-white text-10">{{ $constat->total_constats }} constat(s)</span></td>
+                      </tr>
+                      @empty
+                          <div class="text-center">
+                              <h2>Pas de constat!</h2>
+                          </div>
+                      @endforelse ()
+
+                  </tbody>
+              </table>
+          </div>
+
+
+      </div>
+  </div>
 </div>
-
-<script>
-// Initialisez le graphique avec l'élément HTML ciblé par son ID.
-var chart = echarts.init(document.getElementById('chart'));
-
-// Récupérez les données et les labels à partir du résultat de la requête
-var data = @json($totalDonneesJournalieres->pluck('total')->toArray());
-var labels = @json($totalDonneesJournalieres->pluck('nom_type_oeuf')->toArray());
-
-// Calculer le nombre total
-var total = data.reduce(function(acc, value) {
-  return parseInt(acc) + parseInt(value);
-}, 0);
-
-// Configurez les options du graphique.
-var options = {
-  series: [
-    {
-      type: 'pie',
-      data: data.map(function(value, index) {
-        return { value: value, name: labels[index] };
-      }),
-      label: {
-        show: true,
-        position: 'outside',
-        formatter: '{b}: {c} ({d}%)'
-      }
-    }
-  ],
-  tooltip: {
-    formatter: '{b}: {c} ({d}%)'
-  },
-  legend: {
-    data: labels
-  },
-  title: {
-    text: 'Total: ' + total
-  }
-};
-
-// Appliquez les options au graphique.
-chart.setOption(options);
-</script>

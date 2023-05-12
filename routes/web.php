@@ -3,6 +3,7 @@
 use App\Http\Controllers\BatimentController;
 use App\Http\Controllers\CategoriedepenseController;
 use App\Http\Controllers\Entree\ConstatoeufController;
+use App\Http\Controllers\Entree\ConstatpouletController;
 use App\Http\Controllers\Entree\CycleController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,4 +45,5 @@ Route::group(['prefix' => 'gestion_entree', 'middleware' => 'auth'], function(){
     Route::get('cycle', [CycleController::class, 'page'])->name('gestion_entree.cycles');
     Route::get('constat_oeuf', [ConstatoeufController::class, 'page'])->name('gestion_entree.constat_oeufs');
     Route::get('donnee_du_jour_constat_oeuf', [ConstatoeufController::class, 'donneeJournalierConstat'])->name('gestion_entree.donnee_du_jour_constat_oeuf');
+    Route::get('constat_poulet', [ConstatpouletController::class, 'page'])->name('gestion_entree.constat_poulets');
 });
