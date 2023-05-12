@@ -15,6 +15,7 @@ use App\Http\Controllers\Site\SiteController;
 use App\Http\Controllers\TypedepenseController;
 use App\Http\Controllers\TypeoeufController;
 use App\Http\Controllers\TypepouletController;
+use App\Http\Controllers\TypesortieController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,6 +40,7 @@ Route::group(['prefix' => 'parametrages', 'middleware' => 'auth'], function(){
     Route::get('type_oeuf', [TypeoeufController::class, 'page'])->name('parametrages.type_oeufs');
     Route::get('categorie_depense', [CategoriedepenseController::class, 'page'])->name('parametrages.categorie_depenses');
     Route::get('type_depense', [TypedepenseController::class, 'page'])->name('parametrages.type_depenses');
+    Route::get('type_sortie', [TypesortieController::class, 'page'])->name('parametrages.type_sorties');
 });
 
 Route::group(['prefix' => 'gestion_entree', 'middleware' => 'auth'], function(){
