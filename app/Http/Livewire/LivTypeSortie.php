@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Http\Livewire;
-use App\Models\TypePoulet;
+
+use App\Models\TypeOeuf;
+use App\Models\TypeSortie;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class LivTypePoulet extends Component
+class LivTypeSortie extends Component
 {
     use WithPagination;
-    public $isLoading, $type_id, $type, $actif;
+    public $isLoading, $type_id, $libelle, $actif;
     public $afficherListe=true;
     public $createType=false;
     public $editType=false;
@@ -20,8 +22,8 @@ class LivTypePoulet extends Component
 
     public function render()
     {
-        $types = TypePoulet::paginate(5);
-        return view('livewire.liv-type-poulet', [
+        $types = TypeSortie::paginate(7);
+        return view('livewire.liv-type-sortie', [
             'types' => $types
         ]);
     }
@@ -37,7 +39,7 @@ class LivTypePoulet extends Component
 
     public function resetInput()
     {
-        $this->type = '';
+        $this->libelle = '';
         $this->actif = '';
         $this->resetValidation();
     }
@@ -46,15 +48,15 @@ class LivTypePoulet extends Component
     {
         $this->isLoading = true;
         $data = $this->validate([
-            'type' => 'required|unique:type_poulets,type',
+            'libelle' => 'required|unique:type_sorties,libelle',
             'actif' => 'required|integer'
         ]);
 
         try{
 
-        TypePoulet::create($data);
+        TypeSortie::create($data);
         $this->notification = true;
-        session()->flash('message', 'Type poulet enregistré!');
+        session()->flash('message', 'Type sortie enregistré!');
         $this->resetValidation();
         $this->resetInput();
         $this->isLoading = false;
@@ -79,15 +81,15 @@ class LivTypePoulet extends Component
     {
         $this->isLoading = true;
 
-        $typePoulet = TypePoulet::findOrFail($id);
-        $this->type = $typePoulet->type;
-        $this->actif = $typePoulet->actif;
+        $typeSortie = TypeSortie::findOrFail($id);
+        $this->libelle = $typeSortie->libelle;
+        $this->actif = $typeSortie->actif;
         $this->type_id = $id;
         $this->editType = true;
         $this->createType = false;
         $this->btnCreate = false;
-        $this->isLoading = false;
         $this->afficherListe = false;
+        $this->isLoading = false;
     }
 
     public function removeNotification()
@@ -111,15 +113,15 @@ class LivTypePoulet extends Component
         $this->isLoading = true;
 
         $this->validate([
-            'type' => 'required|unique:type_poulets,type,' . $this->type_id,
+            'libelle' => 'required|unique:type_sorties,libelle,' . $this->type_id,
             'actif' => 'required'
         ]);
 
         try{
 
-            $typePoulet = TypePoulet::findOrFail($this->type_id);
-            $typePoulet->update([
-                'type' => $this->type,
+            $typeSortie = TypeSortie::findOrFail($this->type_id);
+            $typeSortie->update([
+                'libelle' => $this->libelle,
                 'actif' => $this->actif
             ]);
 
@@ -129,8 +131,8 @@ class LivTypePoulet extends Component
             $this->resetInput();
             $this->resetValidation();
             $this->confirmUpdate = false;
-            $this->afficherListe = true;
             $this->btnCreate = true;
+            $this->afficherListe = true;
 
             $this->isLoading = false;
         }catch(\Exception $e){
@@ -164,7 +166,9 @@ class LivTypePoulet extends Component
 
     public function confirmerDelete($id)
     {
-        $this->recordToDelete = TypePoulet::findOrFail($id);
+        $this->isLoading = true;
+        $this->recordToDelete = TypeSortie::findOrFail($id);
+        $this->isLoading = false;
     }
 
     public function cancelDelete()
@@ -174,11 +178,15 @@ class LivTypePoulet extends Component
 
     public function delete()
     {
+        try{
         $this->recordToDelete->delete();
         $this->recordToDelete = null;
         $this->notification = true;
         session()->flash('message', 'Suppression avec sucée');
-
+        }catch(\Exception $e){
+            //$this->notification = true;
+            session()->flash('error', 'Impossible de supprimer le type oeuf. Il est déja utilisé !');
+        }
     }
 
 }

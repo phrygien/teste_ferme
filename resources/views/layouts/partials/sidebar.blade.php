@@ -270,7 +270,7 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a href="{{ route('parametrages.type_depenses')}}">
+				<a href="{{ route('parametrages.type_sorties')}}">
 					<i class="nav-icon i-Remove-Basket"></i>
 					<span class="item-name">{{ __('Type sortie')}}</span>
 				</a>
